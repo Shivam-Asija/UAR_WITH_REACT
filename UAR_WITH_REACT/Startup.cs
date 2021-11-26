@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -10,8 +11,10 @@ using Microsoft.OpenApi.Models;
 using Newtonsoft.Json.Serialization;
 using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Linq;
 using System.Threading.Tasks;
+using UAR_WITH_REACT.Models;
 
 namespace UAR_WITH_REACT
 {
@@ -33,6 +36,7 @@ namespace UAR_WITH_REACT
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "UAR_WITH_REACT", Version = "v1" });
             });
+            services.AddDbContext<UARAuditAppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DbConnection")));
 
             // Enable Cors
             services.AddCors(c =>
