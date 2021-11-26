@@ -18,7 +18,6 @@ namespace UAR_WITH_REACT.Controllers
             using (var context = new UARAuditAppDbContext())
             {
                 //Get all users
-                var shdfbjskdf = "ksdnglkfd";
                 return context.TblAccesses.ToList();
             }
         }
