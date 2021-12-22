@@ -1,0 +1,307 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.btn {
+  border-radius: 4px !important;
+}
+.body {
+  min-height: 100vh;
+  background-color: #c8c8c8;
+  padding-bottom: 10%;
+}
+
+.main-header {
+  height: 20%;
+  position: relative !important;
+  background-color: #003057 !important;
+}
+
+#nav-uar {
+  font-size: larger;
+  font-weight: 600;
+  width: 25ch;
+  color: white !important;
+}
+
+.dropdown {
+  vertical-align: middle;
+  margin-top: 2.5vh;
+}
+
+#logo {
+  height: 45px;
+  background-color: #003057;
+}
+
+#logo-footer {
+  height: 35px;
+}
+
+#welcome-user {
+  color: white;
+}
+
+#welcome-user:hover {
+  color: #cbd3da;
+}
+
+.footer {
+  clear: both;
+  height: 10%;
+  z-index: 1030;
+  color: white;
+  background-color: #001e3a;
+  margin-top: 3.55%;
+  width: 100%;
+  text-align: center;
+  font-size: 1.1em;
+  bottom: 0 !important;
+  margin-top: auto;
+}
+
+.uar-logo {
+  margin-left: 0px;
+  text-align: left !important;
+}
+
+.multicolor-bar {
+  display: inline-block;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  height: 2.5em;
+  width: 50%;
+}
+
+.admin-card {
+  background-color: rgb(0, 98, 155);
+  background-image: linear-gradient(
+    0,
+    rgb(1, 76, 119) 2%,
+    rgb(0, 98, 155) 50.9615%,
+    rgb(0, 98, 155) 98.5577%
+  );
+}
+
+.manager-card {
+  background-color: rgb(120, 120, 120);
+  background-image: linear-gradient(
+    0,
+    rgb(94, 94, 94) 1.44231%,
+    rgb(142, 142, 142) 97.5962%
+  );
+}
+
+.eclipse-card-btn {
+  background-color: #00629b !important;
+  color: #ffffff;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.card-popup-kpi {
+  background-image: linear-gradient(to bottom, #003057, #003057);
+  background-position: top left;
+  background-size: 100%;
+  background-repeat: repeat;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+.text-light {
+  color: #f8f9fa !important;
+}
+
+.announcement-btn {
+  background-color: white !important;
+  border: none !important;
+}
+
+.esarf-btn {
+  background-color: white !important;
+  border: none !important;
+}
+
+.tim-management-portal {
+  background-image: linear-gradient(to bottom, #a0a0a0, #606060);
+  background-position: top left;
+  background-size: 100%;
+  background-repeat: repeat;
+}
+
+.landing-page {
+  margin-top: 2em !important;
+  margin-bottom: 3.5em !important;
+}
+
+.navlink-header-button {
+  width: 30px;
+  text-decoration: none;
+}
+
+.request-data {
+  max-width: 95%;
+}
+
+.tim-manager-nav.active {
+  background-color: #198754 !important;
+  color: white !important;
+}
+
+tfoot input {
+  width: 100%;
+  padding: 3px;
+  box-sizing: border-box;
+}
+
+.table-container {
+  display: none;
+}
+
+.main-content {
+  min-height: 69.15vh;
+}
+
+.tim-admin-portal-header {
+  background-image: linear-gradient(to bottom, #009e8c, #1b8579);
+  background-position: top left;
+  background-size: 100%;
+  background-repeat: repeat;
+}
+
+.tim-admin-tabs-container {
+  background-color: #c8c8c8 !important;
+  margin: 4px;
+}
+
+.tim-admin-tab {
+  font-size: small !important;
+  background-color: white !important;
+  color: #333333 !important;
+  border-top: none !important;
+  border-bottom: none !important;
+  border-right: #f8f9fa;
+  border-left: #f8f9fa;
+  /* border: 1px solid #009e8c !important; */
+  font-weight: 600 !important;
+}
+
+.tim-admin-tab-active {
+  background-color: #009e8c !important;
+  color: white !important;
+}
+
+.table-container {
+  margin-top: 1.2em !important;
+}
+
+.table-data-container {
+  min-height: 27.7vh;
+}
+
+.spinner-container {
+  margin-top: 20vh;
+}
+
+/* tabs */
+.tim-admin-tab.active {
+  background-color: #118e80 !important;
+  color: white !important;
+}
+
+.tim-admin-header-tab {
+  text-decoration: none !important;
+  border: none !important;
+  background-color: white !important;
+  color: black !important;
+  text-align: left !important;
+}
+.tim-admin-header-tab:hover {
+  background-color: #e4e4e4 !important;
+  color: black !important;
+}
+
+.home-eclipse-btn:hover {
+  background-color: #014c77 !important;
+}
+
+th {
+  min-width: 5em !important;
+}
+
+.tim-admin-portal-heading {
+  border-left: 1px solid whitesmoke;
+  border-right: 1px solid whitesmoke;
+}
+
+table.dataTable tbody td.select-checkbox:before {
+  width: 1em !important;
+  height: 1em !important;
+}
+
+table.dataTable tbody tr.selected > td.select-checkbox:before {
+  background: linear-gradient(45deg, black, transparent);
+}
+
+.checkbox-header > input {
+  display: none !important;
+}
+
+.dt-button.buttons-html5,
+.dt-button.buttons-print {
+  font-weight: 600 !important;
+  background: #e9e9e9 !important;
+}
+
+.dt-button.buttons-html5:hover,
+.dt-button.buttons-print:hover {
+  color: whitesmoke !important;
+  background: #343a40 !important;
+}
+.dt-buttons {
+  margin-left: 1.5em;
+}
+
+.table {
+  /* display: block; */
+  /* display: flow-root; */
+  overflow-x: auto;
+}
