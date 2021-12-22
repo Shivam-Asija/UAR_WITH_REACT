@@ -18,7 +18,11 @@ function TimMangerRequests() {
     <div className="TimManagerRequest">
       <div className="container-fluid request-data">
         <TimManagerNav heading="REQUEST FOR CHANGES" />
-        {load === "loaded" ? <DataTable data={data} /> : ""}
+        {load === "loaded" ? (
+          <DataTable loaded={true} data={data} />
+        ) : (
+          <DataTable loaded={false} data={data} />
+        )}
       </div>
     </div>
   );

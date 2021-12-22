@@ -5,19 +5,26 @@ import DataTable from "../../DataTable/index";
 
 function TimManagerPending() {
   const [data, setData] = useState([]);
+  const [load, setload] = useState("");
 
   useEffect(() => {
     fetch(variables.API_URL + "VMAuditKpi")
       .then((response) => response.json())
-      .then((json) => setData(json));
+      .then((json) => setData(json))
+      .then(setload("loaded"));
   }, []);
 
   return (
     <div className="TimManagerRequest">
       <div className="container-fluid request-data">
         <TimManagerNav heading="PENDING FOR REVIEW" />
-
-        <DataTable data={data} />
+        {load === "loaded" ? (
+          <DataTable loaded={true} data={data} />
+        ) : (
+          <DataTable loaded={false} data={data} />
+        )}
+        <button id="button">Rows Selected </button>
+        <span id="row-count"></span>
       </div>
     </div>
   );

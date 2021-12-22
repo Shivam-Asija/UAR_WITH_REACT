@@ -13,9 +13,12 @@ import "datatables.net-buttons/js/buttons.print.js"
 
 let selectedRows = [];
 
-export default function DataTable({data}) {
+export default function DataTable({loaded, data}) {
 
     const columns = data[0] && Object.keys(data[0]);
+    if (columns && columns.length > 6) {
+        $("table").css("display", "block");
+    }        
     useEffect(() => {
 
         const timer = setTimeout(() => {
@@ -28,23 +31,26 @@ export default function DataTable({data}) {
             });
 
             // DataTable
-            var table = $("#example").DataTable({
-                columnDefs: [{
-                orderable: false,
-                className: 'select-checkbox',
-                            targets: 0
-                }],
-                    select: {
-                        style: 'multi',
-                        selector: 'td:first-child'
-                        },
-                    order: [[1, 'asc']],
-                dom: 'plBfrtip',
-                buttons: [
-                    'copy', 'csv', 'excel', 'pdf', 'print'
-                ],
+            // if (loaded) {
+                var table = $("#example").DataTable({
+                    columnDefs: [{
+                    orderable: false,
+                    className: 'select-checkbox',
+                                targets: 0
+                    }],
+                        select: {
+                            style: 'multi',
+                            selector: 'td:first-child'
+                            },
+                        order: [[1, 'asc']],
+                    dom: 'plBfrtip',
+                    buttons: [
+                        'copy', 'csv', 'excel', 'pdf', 'print'
+                    ],
                 
-            });
+                });
+            // }
+            
 
             $('#example tbody').on( 'click', 'tr', function () {
                 $(this).toggleClass('selected');
@@ -76,6 +82,7 @@ export default function DataTable({data}) {
     const timer = setTimeout(() => {
         $(".table-container").css("display","block");
         $(".spinner-container").css("display","none");
+
         }, 2500);
     return () => clearTimeout(timer);
 
@@ -107,8 +114,6 @@ export default function DataTable({data}) {
                             </tr>)}
                     </tbody>
                 </table>
-                <button id="button">Rows Selected </button>
-                <span id="row-count"></span>
             </div>
         </div>
     )

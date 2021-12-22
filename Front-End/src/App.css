@@ -47,7 +47,8 @@
 }
 
 .main-header {
-  height: 20%;
+  /* height: 20%; */
+  height: 5em;
   position: relative !important;
   background-color: #003057 !important;
 }
@@ -57,11 +58,6 @@
   font-weight: 600;
   width: 25ch;
   color: white !important;
-}
-
-.dropdown {
-  vertical-align: middle;
-  margin-top: 2.5vh;
 }
 
 #logo {
@@ -210,6 +206,7 @@ tfoot input {
 .tim-admin-tabs-container {
   background-color: #c8c8c8 !important;
   margin: 4px;
+  height: 2.5em;
 }
 
 .tim-admin-tab {
@@ -220,8 +217,8 @@ tfoot input {
   border-bottom: none !important;
   border-right: #f8f9fa;
   border-left: #f8f9fa;
-  /* border: 1px solid #009e8c !important; */
   font-weight: 600 !important;
+  height: 3em;
 }
 
 .tim-admin-tab-active {
@@ -302,6 +299,13 @@ table.dataTable tbody tr.selected > td.select-checkbox:before {
 
 .table {
   /* display: block; */
-  /* display: flow-root; */
   overflow-x: auto;
+}
+
+#welcome-user {
+  margin: 0em 1em 0em 2em;
+}
+
+.website-management-btn {
+  margin: 0em 2em 0em 2em;
 }

@@ -47,7 +47,9 @@ function Header() {
               </NavLink>
               <NavDropdown.Item href="#action/3.2">Eclipse</NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="">WEBSITE MANAGEMENT</Nav.Link>
+            <Nav.Link className="website-management-btn" href="">
+              WEBSITE MANAGEMENT
+            </Nav.Link>
             <Navbar.Text id="welcome-user">Welcome, chtr\P2670239</Navbar.Text>
           </Nav>
         </Navbar.Collapse>
