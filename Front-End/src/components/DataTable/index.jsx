@@ -1,9 +1,11 @@
 import React, { useEffect } from "react";
 import * as ReactBootStrap from "react-bootstrap";
+import { NavLink } from "react-router-dom";
+import { useState } from "react";
 import "jquery/dist/jquery.min.js";
 import $ from "jquery"
 import "bootstrap/dist/css/bootstrap.min.css";
-import "datatables.net-dt/js/dataTables.dataTables";
+import "datatables.net-dt/js/dataTables.dataTables.min.js";
 import "datatables.net-dt/css/jquery.dataTables.min.css";
 import "datatables.net-buttons/js/dataTables.buttons.js"
 import "datatables.net-buttons/js/buttons.colVis.js"
@@ -14,6 +16,8 @@ import "datatables.net-buttons/js/buttons.print.js"
 let selectedRows = [];
 
 export default function DataTable({loaded, data}) {
+
+    const [requestData, setRequestData] = useState({})
 
     const columns = data[0] && Object.keys(data[0]);
     if (columns && columns.length > 6) {
@@ -31,18 +35,18 @@ export default function DataTable({loaded, data}) {
             });
 
             // DataTable
-            // if (loaded) {
                 var table = $("#example").DataTable({
+
                     columnDefs: [{
                     orderable: false,
                     className: 'select-checkbox',
                                 targets: 0
                     }],
-                        select: {
-                            style: 'multi',
-                            selector: 'td:first-child'
-                            },
-                        order: [[1, 'asc']],
+                    select: {
+                        style: 'multi',
+                        selector: 'td:first-child'
+                        },
+                    order: [[1, 'asc']],
                     dom: 'plBfrtip',
                     buttons: [
                         'copy', 'csv', 'excel', 'pdf', 'print'
@@ -50,16 +54,43 @@ export default function DataTable({loaded, data}) {
                 
                 });
             // }
-            
 
-            $('#example tbody').on( 'click', 'tr', function () {
-                $(this).toggleClass('selected');
-            } );
+            $('#example tbody').on( 'click', '.edit-button', function () {
+                $(this).closest("tr").addClass('edit-row');
+                let editRow = table.rows('.edit-row').data()[0];
+                let tableHead =  [];
+
+                $('#example > thead > tr > th').each(function(){
+                    tableHead.push($(this).text())
+                })
+                editRow.shift();
+                editRow.pop();
+                tableHead.shift();
+                tableHead.pop();
+                let editData = [];
+                editData.push(tableHead);
+                editData.push(editRow);
+                let finalData = {}
+                for (let i = 0; i < editData[0].length; i++) {
+                    let key = editData[0][i];
+                    let value = editData[1][i];
+                    finalData[key] = value;
+
+                }            
+                                    
+                setRequestData(finalData);
+            });
         
             $('#button').click( function () {
                 selectedRows = table.rows('.selected').data();
                 $("#row-count").html(" : " + table.rows('.selected').data().length);
-            } );            
+            } );      
+
+            $('#example tbody').on( 'click', 'tr', function () {
+                $(this).toggleClass('selected');
+            });
+            
+            
             // Apply the search
             table
             .columns()
@@ -72,22 +103,20 @@ export default function DataTable({loaded, data}) {
                 }
                 );
             });
-            }, 2500);
+            }, 2000);
 
         return () => clearTimeout(timer);
     },[]);
 
 
     useEffect(() => {
-    const timer = setTimeout(() => {
-        $(".table-container").css("display","block");
-        $(".spinner-container").css("display","none");
+        const timer = setTimeout(() => {
+            $(".table-container").css("display","block");
+            $(".spinner-container").css("display","none");
 
-        }, 2500);
-    return () => clearTimeout(timer);
-
+            }, 2000);
+        return () => clearTimeout(timer);
     },[]);
-
 
 
     return (
@@ -102,15 +131,18 @@ export default function DataTable({loaded, data}) {
             <div className="table-container">
                 <table id="example" className="table table-light table-striped">
                     <thead>
-                        <tr  className="th-sm"><th>Select</th>{data[0] && columns.map((heading) => <th>{heading}</th>)}</tr>
+                        <tr  className="th-sm"><th>Select</th>{data[0] && columns.map((heading) => <th>{heading}</th>)}<th>Action</th></tr>
                         </thead>
                     <tfoot style={{ display: "table-header-group" }}>
-                        <tr><th className="checkbox-header">Select</th>{data[0] && columns.map((heading) => <th>{heading}</th>)}</tr>
+                        <tr><th className="checkbox-header">Select</th>{data[0] && columns.map((heading) => <th>{heading}</th>)}<th className="edit-column"></th></tr>
                     </tfoot>
                     <tbody>
                         {data.map(row => <tr><td></td>{
                                 columns.map(column => <td>{row[column]}</td>)
-                            }
+                            }<td><NavLink className="edit-button" to={{
+                                pathname:"Request",
+                                state:requestData
+                            }}>Edit</NavLink></td>
                             </tr>)}
                     </tbody>
                 </table>

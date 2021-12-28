@@ -309,3 +309,140 @@ table.dataTable tbody tr.selected > td.select-checkbox:before {
 .website-management-btn {
   margin: 0em 2em 0em 2em;
 }
+
+/* .edit-column {
+  display: none;
+} */
+
+h1 {
+  text-align: center;
+}
+.accordian-input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+.accordion-wrapper {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5);
+  width: 60%;
+  margin: 0 auto;
+}
+.accordion {
+  width: 100%;
+  color: white;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+.accordion:last-child {
+  margin-bottom: 0;
+}
+.accordion-label {
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  padding: 16px;
+  background: rgba(4, 57, 94, 0.8);
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 20px;
+}
+.accordion-label:hover {
+  background: rgba(4, 57, 94, 1);
+}
+.accordion-label::after {
+  content: "\276F";
+  width: 16px;
+  height: 16px;
+  text-align: center;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.accordion-content {
+  max-height: 0;
+  padding: 0 16px;
+  color: rgba(4, 57, 94, 1);
+  background: white;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.accordion-content p {
+  margin: 0;
+  color: rgba(4, 57, 94, 0.7);
+  font-size: 18px;
+}
+input:checked + .accordion-label {
+  background: rgba(4, 57, 94, 1);
+}
+input:checked + .accordion-label::after {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+input:checked ~ .accordion-content {
+  max-height: 100vh;
+  padding: 16px;
+}
+
+.status-card {
+  margin: 0em 20em;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.status-data-form {
+  padding: 0em 15%;
+}
+
+.edit-button {
+  text-decoration: none;
+  background: black;
+  padding: 0.2em;
+  color: white;
+  border-radius: 4px;
+}
+
+.title-request {
+  margin: 0em 20em;
+}
+
+.searchinputs {
+  display: inline;
+}
+
+.searchIcon {
+  display: contents;
+}
+
+.dataResult {
+  margin-top: 5px;
+  width: 12em;
+  height: auto;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  overflow: hidden;
+  overflow-y: auto;
+  display: inline-grid;
+  cursor: pointer;
+}
+.managerItem:hover {
+  background-color: #6c757d;
+  color: white;
+}
+
+.dataResult::-webkit-scrollbar {
+  display: none;
+}
+
+.dataResult .managerItem {
+  width: 100%;
+  height: 2em;
+  align-items: center;
+  color: black;
+}
+
+#clearBtn {
+  cursor: pointer;
+}

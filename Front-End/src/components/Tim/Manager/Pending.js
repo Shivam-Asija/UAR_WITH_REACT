@@ -8,7 +8,7 @@ function TimManagerPending() {
   const [load, setload] = useState("");
 
   useEffect(() => {
-    fetch(variables.API_URL + "VMAuditKpi")
+    fetch(variables.API_URL + "changerequests")
       .then((response) => response.json())
       .then((json) => setData(json))
       .then(setload("loaded"));

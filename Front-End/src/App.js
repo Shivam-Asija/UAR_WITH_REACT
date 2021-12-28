@@ -11,6 +11,7 @@ import TimAdminChangesCompleted from "./components/Tim/Admin/ChangesCompleted";
 import TimAdminPendingForReview from "./components/Tim/Admin/PendingForReview";
 import TimAdminApproved from "./components/Tim/Admin/Approved";
 import TimAdminVpApproval from "./components/Tim/Admin/VpApproval";
+import Request from "./components/Request/Request";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
             />
             <Route path="/TimAdminApproved" component={TimAdminApproved} />
             <Route path="/TimAdminVpApproval" component={TimAdminVpApproval} />
+            <Route path="/Request" component={Request} />
           </Switch>
         </div>
         <Footer />
