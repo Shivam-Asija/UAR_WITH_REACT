@@ -15,11 +15,15 @@ function TimAdminPendingChanges() {
   }, []);
 
   return (
-    <div className="TimManagerRequest">
+    <div className="TimAdminRequest">
       <div className="container-fluid request-data">
         <TimAdminNav />
         {load === "loaded" ? (
-          <DataTable className="tim-admin-table" data={data} />
+          <DataTable
+            className="tim-admin-table"
+            data={data}
+            submitButton={"Reset Records"}
+          />
         ) : (
           ""
         )}

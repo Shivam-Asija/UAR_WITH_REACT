@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { variables } from "../../../Variables";
-import TimManagerNav from "../../Nav/Tim/Manager/TimManagerNav";
+import EclipseManagerNav from "../../Nav/Eclipse/Manager/EclipseManagerNav";
 import DataTable from "../../DataTable/index";
 
-function TimMangerRequests() {
+function EclipseMangerRequests() {
   const [data, setData] = useState([]);
   const [load, setload] = useState("");
 
@@ -15,11 +15,15 @@ function TimMangerRequests() {
   }, []);
 
   return (
-    <div className="TimManagerRequest">
+    <div className="EclipseManagerRequest">
       <div className="container-fluid request-data">
-        <TimManagerNav heading="REQUEST FOR CHANGES" />
+        <EclipseManagerNav heading="REQUEST FOR CHANGES" />
         {load === "loaded" ? (
-          <DataTable loaded={true} data={data} />
+          <DataTable
+            loaded={true}
+            data={data}
+            submitButton={"Submit Approval"}
+          />
         ) : (
           <DataTable loaded={false} data={data} />
         )}
@@ -28,4 +32,4 @@ function TimMangerRequests() {
   );
 }
 
-export default TimMangerRequests;
+export default EclipseMangerRequests;

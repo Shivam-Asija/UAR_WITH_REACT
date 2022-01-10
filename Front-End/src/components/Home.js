@@ -58,7 +58,7 @@ export class Home extends Component {
                               <div className="col-lg-6" style={{ zIndex: "1" }}>
                                 <div className="card  border-0 pop-up p-0 rounded-0">
                                   <div className="">
-                                    <div className="admin-card shadow-lg  pb-5">
+                                    <div className="admin-card shadow-lg  pb-4">
                                       <div className="col-lg-12 text-left pt-2">
                                         <h4 className="text-light pt-4 text-center">
                                           <b>ADMINISTRATIVE PORTAL</b>
@@ -70,10 +70,18 @@ export class Home extends Component {
                                           <div className="form-group">
                                             <small className="form-text text-muted text-right"></small>
                                           </div>
-                                          <p className="text-white">
-                                            You do not have access to this
-                                            portal.
-                                          </p>
+                                          <NavLink
+                                            to="/EclipseAdminRequestsForChange"
+                                            className="eclipse-card-btn btn home-eclipse-btn text-light border text-center shadow btn-lg w-75 btn-info"
+                                          >
+                                            <b>ECLIPSE</b>
+                                          </NavLink>
+                                          <NavLink
+                                            to="/TimAdminRequestsForChange"
+                                            className="tim-card-btn btn  border text-center shadow btn-lg w-75 btn-success"
+                                          >
+                                            <b>TIM</b>
+                                          </NavLink>
                                         </form>
                                       </div>
                                     </div>
@@ -98,12 +106,12 @@ export class Home extends Component {
                                           <div className="form-group">
                                             <small className="form-text text-muted text-right"></small>
                                           </div>
-                                          <a
-                                            href="/EclipseUser/Records"
+                                          <NavLink
+                                            to="/EclipseMangerPending"
                                             className="eclipse-card-btn btn home-eclipse-btn text-light border text-center shadow btn-lg w-75 btn-info"
                                           >
                                             <b>ECLIPSE</b>
-                                          </a>
+                                          </NavLink>
                                           <NavLink
                                             to="/timManagerPending"
                                             className="tim-card-btn btn  border text-center shadow btn-lg w-75 btn-success"

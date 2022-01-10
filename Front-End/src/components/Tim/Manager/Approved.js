@@ -5,18 +5,28 @@ import DataTable from "../../DataTable/index";
 
 const TimManagerApproved = () => {
   const [data, setData] = useState([]);
+  const [load, setload] = useState("");
 
   useEffect(() => {
     fetch(variables.API_URL + "VMAuditKpi")
       .then((response) => response.json())
-      .then((json) => setData(json));
+      .then((json) => setData(json))
+      .then(setload("loaded"));
   }, []);
 
   return (
     <div className="container-fluid request-data">
       <TimManagerNav heading="APPROVED" />
 
-      <DataTable data={data} />
+      {load === "loaded" ? (
+        <DataTable
+          className="tim-manager-table"
+          data={data}
+          submitButton={"Submit Approval"}
+        />
+      ) : (
+        ""
+      )}
     </div>
   );
 };

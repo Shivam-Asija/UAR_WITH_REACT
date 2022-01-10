@@ -19,7 +19,11 @@ function TimManagerPending() {
       <div className="container-fluid request-data">
         <TimManagerNav heading="PENDING FOR REVIEW" />
         {load === "loaded" ? (
-          <DataTable loaded={true} data={data} />
+          <DataTable
+            loaded={true}
+            data={data}
+            submitButton={"Submit Approval"}
+          />
         ) : (
           <DataTable loaded={false} data={data} />
         )}

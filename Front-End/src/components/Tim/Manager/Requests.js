@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { variables } from "../../../Variables";
-import TimAdminNav from "../../Nav/Tim/Admin/TimAdminNav";
+import TimManagerNav from "../../Nav/Tim/Manager/TimManagerNav";
 import DataTable from "../../DataTable/index";
 
-function TimAdminChangesCompleted() {
+function TimMangerRequests() {
   const [data, setData] = useState([]);
   const [load, setload] = useState("");
 
   useEffect(() => {
-    fetch(variables.API_URL + "VMAuditKpi")
+    fetch(variables.API_URL + "ChangeRequests")
       .then((response) => response.json())
       .then((json) => setData(json))
       .then(setload("loaded"));
@@ -17,19 +17,19 @@ function TimAdminChangesCompleted() {
   return (
     <div className="TimManagerRequest">
       <div className="container-fluid request-data">
-        <TimAdminNav />
+        <TimManagerNav heading="REQUEST FOR CHANGES" />
         {load === "loaded" ? (
           <DataTable
-            className="tim-admin-table"
+            loaded={true}
             data={data}
-            submitButton={"Reset Records"}
+            submitButton={"Submit Approval"}
           />
         ) : (
-          ""
+          <DataTable loaded={false} data={data} />
         )}
       </div>
     </div>
   );
 }
 
-export default TimAdminChangesCompleted;
+export default TimMangerRequests;

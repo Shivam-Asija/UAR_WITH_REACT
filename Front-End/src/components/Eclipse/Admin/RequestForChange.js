@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { variables } from "../../../Variables";
-import TimAdminNav from "../../Nav/Tim/Admin/TimAdminNav";
+import EclipseAdminNav from "../../Nav/Eclipse/Admin/EclipseAdminNav";
 import DataTable from "../../DataTable/index";
 
-function TimAdminChangesCompleted() {
+function EclipseAdminRequestsForChange() {
   const [data, setData] = useState([]);
   const [load, setload] = useState("");
 
@@ -15,21 +15,17 @@ function TimAdminChangesCompleted() {
   }, []);
 
   return (
-    <div className="TimManagerRequest">
+    <div className="EclipseAdminPending">
       <div className="container-fluid request-data">
-        <TimAdminNav />
+        <EclipseAdminNav />
         {load === "loaded" ? (
-          <DataTable
-            className="tim-admin-table"
-            data={data}
-            submitButton={"Reset Records"}
-          />
+          <DataTable loaded={true} data={data} submitButton={"Reset Records"} />
         ) : (
-          ""
+          <DataTable loaded={false} data={data} />
         )}
       </div>
     </div>
   );
 }
 
-export default TimAdminChangesCompleted;
+export default EclipseAdminRequestsForChange;

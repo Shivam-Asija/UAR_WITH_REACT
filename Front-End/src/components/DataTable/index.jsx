@@ -15,7 +15,7 @@ import "datatables.net-buttons/js/buttons.print.js"
 
 let selectedRows = [];
 
-export default function DataTable({loaded, data}) {
+export default function DataTable({loaded, data, submitButton}) {
 
     const [requestData, setRequestData] = useState({})
 
@@ -146,6 +146,21 @@ export default function DataTable({loaded, data}) {
                             </tr>)}
                     </tbody>
                 </table>
+                {
+                    submitButton == "Reset Records" ? (
+                        <div class="d-md-flex justify-content-between text-right col-md-12 align-items-center flex-row-reverse py-0 my-4 submit-approval-div">
+                            <p class="text-light py-0 my-0 w-25">
+                                <input type="submit" name="SubmitApprovals" value="Submit Approvals" class="btn btn-warning text-center w-75 my-2 shadow" id="SubmitApprovals"/>
+                            </p>
+                        </div>  
+                    ) : (
+                        <div class="d-md-flex justify-content-between text-right col-md-12 align-items-center flex-row-reverse py-0 my-4 submit-approval-div">
+                            <p class="text-light py-0 my-0 w-25">
+                                <input type="submit" name="SubmitApprovals" value="Reset Records" class="btn btn-warning text-center w-75 my-2 shadow" id="SubmitApprovals"/>
+                            </p>
+                        </div>                    
+                    )         
+                }                
             </div>
         </div>
     )

@@ -1,35 +1,35 @@
 import React, { useState, useEffect } from "react";
 import { variables } from "../../../Variables";
-import TimAdminNav from "../../Nav/Tim/Admin/TimAdminNav";
+import EclipseManagerNav from "../../Nav/Eclipse/Manager/EclipseManagerNav";
 import DataTable from "../../DataTable/index";
 
-function TimAdminChangesCompleted() {
+function EclipseMangerApproved() {
   const [data, setData] = useState([]);
   const [load, setload] = useState("");
 
   useEffect(() => {
-    fetch(variables.API_URL + "VMAuditKpi")
+    fetch(variables.API_URL + "ChangeRequests")
       .then((response) => response.json())
       .then((json) => setData(json))
       .then(setload("loaded"));
   }, []);
 
   return (
-    <div className="TimManagerRequest">
+    <div className="EclipseManagerApproved">
       <div className="container-fluid request-data">
-        <TimAdminNav />
+        <EclipseManagerNav heading="APPROVED" />
         {load === "loaded" ? (
           <DataTable
-            className="tim-admin-table"
+            loaded={true}
             data={data}
-            submitButton={"Reset Records"}
+            submitButton={"Submit Approval"}
           />
         ) : (
-          ""
+          <DataTable loaded={false} data={data} />
         )}
       </div>
     </div>
   );
 }
 
-export default TimAdminChangesCompleted;
+export default EclipseMangerApproved;
