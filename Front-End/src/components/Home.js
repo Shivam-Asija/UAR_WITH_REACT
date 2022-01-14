@@ -91,13 +91,13 @@ export class Home extends Component {
                               <div className="col-lg-6" style={{ zIndex: "1" }}>
                                 <div className="card border-0 pop-up p-0 rounded-0">
                                   <div className="">
-                                    <div className=" manager-card shadow pb-5">
+                                    <div className=" manager-card shadow ">
                                       <div className="col-lg-12 text-left pt-2">
                                         <h4 className="text-light pt-4 text-center">
                                           <b>MANAGER PORTAL&nbsp;</b>
                                         </h4>
                                         <p
-                                          className="mb-3 pl-5"
+                                          className="manager-signin-text pl-5"
                                           style={{ color: "#ffffff" }}
                                         >
                                           <b>SIGN IN</b>

@@ -27,8 +27,8 @@ function TimManagerPending() {
         ) : (
           <DataTable loaded={false} data={data} />
         )}
-        <button id="button">Rows Selected </button>
-        <span id="row-count"></span>
+        {/* <button id="button">Rows Selected </button>
+        <span id="row-count"></span> */}
       </div>
     </div>
   );

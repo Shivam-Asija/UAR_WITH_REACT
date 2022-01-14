@@ -35,7 +35,12 @@ function Header() {
                 Tim
               </NavLink>
 
-              <NavDropdown.Item href="#action/3.2">Eclipse</NavDropdown.Item>
+              <NavLink
+                className="tim-admin-header-tab btn rounded-0 px-3  mx-0   w-100 btn-secondary "
+                to="EclipseAdminRequestsForChange"
+              >
+                Eclipse
+              </NavLink>
             </NavDropdown>
 
             <NavDropdown title="MANAGEMENT PORTAL" id="responsive-nav-dropdown">
@@ -45,7 +50,12 @@ function Header() {
               >
                 Tim
               </NavLink>
-              <NavDropdown.Item href="#action/3.2">Eclipse</NavDropdown.Item>
+              <NavLink
+                className="tim-admin-header-tab btn rounded-0 px-3  mx-0   w-100 btn-secondary "
+                to="EclipseMangerPending"
+              >
+                Eclipse
+              </NavLink>
             </NavDropdown>
             <Nav.Link className="website-management-btn" href="">
               WEBSITE MANAGEMENT

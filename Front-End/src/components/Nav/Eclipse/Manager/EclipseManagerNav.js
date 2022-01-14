@@ -67,7 +67,7 @@ function EclipseManagerNav(props) {
         <div className="container">
           <div className="row">
             <div className="col-md-6 px-0 py-0">
-              <div className="col-md-12 border-left my-2   border-right pt-2 pb-1 bg-primary border-light">
+              <div className="col-md-12 border-left my-2   border-right pt-2 pb-1 eclipse-tab-heading border-light">
                 <h4 className="text-left text-white pl-3 pt-1 pb-1">
                   {props.heading}
                 </h4>

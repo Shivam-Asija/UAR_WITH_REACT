@@ -25,7 +25,11 @@ function EclipseMangerPending() {
             submitButton={"Submit Approval"}
           />
         ) : (
-          <DataTable loaded={false} data={data} />
+          <DataTable
+            loaded={false}
+            data={data}
+            submitButton={"Submit Approval"}
+          />
         )}
       </div>
     </div>

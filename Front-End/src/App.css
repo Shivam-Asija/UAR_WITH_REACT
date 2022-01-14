@@ -78,17 +78,17 @@
 }
 
 .footer {
+  position: fixed;
   clear: both;
   height: 10%;
   z-index: 1030;
   color: white;
   background-color: #001e3a;
-  margin-top: 3.55%;
   width: 100%;
   text-align: center;
   font-size: 1.1em;
   bottom: 0 !important;
-  margin-top: auto;
+  max-height: 4em;
 }
 
 .uar-logo {
@@ -206,6 +206,7 @@ tfoot input {
 
 .main-content {
   min-height: 69.15vh;
+  margin-bottom: 4.5em;
 }
 
 .tim-admin-portal-header {
@@ -450,8 +451,8 @@ body {
 
 .edit-button {
   text-decoration: none;
-  background: black;
-  padding: 0.2em;
+  background: #e6b800;
+  padding: 0.3em;
   color: white;
   border-radius: 4px;
 }
@@ -528,4 +529,16 @@ body {
   bottom: 0 !important;
   margin-top: 20px;
   background-color: #eeeeee;
+}
+
+.manager-signin-text {
+  margin-bottom: 2.7em !important;
+}
+
+.manager-card {
+  padding-bottom: 1.6rem !important;
+}
+
+.eclipse-tab-heading {
+  background-color: #00629b;
 }

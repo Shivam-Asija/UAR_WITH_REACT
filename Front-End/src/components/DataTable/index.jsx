@@ -80,17 +80,13 @@ export default function DataTable({loaded, data, submitButton}) {
                                     
                 setRequestData(finalData);
             });
-        
             $('#button').click( function () {
                 selectedRows = table.rows('.selected').data();
                 $("#row-count").html(" : " + table.rows('.selected').data().length);
             } );      
-
             $('#example tbody').on( 'click', 'tr', function () {
                 $(this).toggleClass('selected');
             });
-            
-            
             // Apply the search
             table
             .columns()
@@ -103,7 +99,7 @@ export default function DataTable({loaded, data, submitButton}) {
                 }
                 );
             });
-            }, 2000);
+            }, 1000);
 
         return () => clearTimeout(timer);
     },[]);
@@ -156,7 +152,7 @@ export default function DataTable({loaded, data, submitButton}) {
                     ) : (
                         <div class="d-md-flex justify-content-between text-right col-md-12 align-items-center flex-row-reverse py-0 my-4 submit-approval-div">
                             <p class="text-light py-0 my-0 w-25">
-                                <input type="submit" name="SubmitApprovals" value="Reset Records" class="btn btn-warning text-center w-75 my-2 shadow" id="SubmitApprovals"/>
+                                <input type="submit" name="SubmitApprovals" value="Submit Approvals" class="btn btn-warning text-center w-75 my-2 shadow" id="SubmitApprovals"/>
                             </p>
                         </div>                    
                     )         
