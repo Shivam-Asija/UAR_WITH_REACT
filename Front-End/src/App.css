@@ -545,7 +545,7 @@ body {
 
 .submit-approval:hover,
 .reset-records:hover {
-  background-color: #e6b800;
+  color: white !important;
 }
 
 .submit-approval-div {
@@ -576,4 +576,5 @@ body {
 
 table.dataTable {
   margin-bottom: 1em !important;
+  padding-top: 1em !important;
 }
