@@ -259,6 +259,18 @@ tfoot input {
   height: 3em;
 }
 
+.eclipse-admin-tab:hover,
+.eclipse-manager-nav:hover {
+  color: white !important;
+  background-color: #0099d8 !important;
+}
+
+.tim-admin-tab:hover,
+.tim-manager-nav:hover {
+  color: white !important;
+  background-color: #2cd1be !important;
+}
+
 .tim-admin-tab-active {
   background-color: #009e8c !important;
   color: white !important;
@@ -455,6 +467,12 @@ body {
   padding: 0.3em;
   color: white;
   border-radius: 4px;
+  font-weight: bold;
+}
+
+.edit-button:hover {
+  color: white;
+  background-color: #ffc108;
 }
 
 .title-request {
@@ -519,10 +537,15 @@ body {
   margin-bottom: 2em;
 }
 
-#SubmitApprovals {
+.submit-approval .reset-records {
   margin-left: 15px;
   margin-bottom: 15px;
   margin-top: 15px;
+}
+
+.submit-approval:hover,
+.reset-records:hover {
+  background-color: #e6b800;
 }
 
 .submit-approval-div {
@@ -541,4 +564,16 @@ body {
 
 .eclipse-tab-heading {
   background-color: #00629b;
+}
+
+.dataTables_wrapper .dataTables_paginate {
+  padding-top: 0em !important;
+}
+
+.dataTables_paginate .paging_simple_numbers {
+  margin-top: 1em !important;
+}
+
+table.dataTable {
+  margin-bottom: 1em !important;
 }
