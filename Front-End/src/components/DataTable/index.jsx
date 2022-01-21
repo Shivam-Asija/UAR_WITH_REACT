@@ -83,7 +83,6 @@ export default function DataTable({loaded, data, submitButton}) {
             $('td').click( function () {
                 selectedRows = table.rows('.selected').data();
                 $("#row-count").html(" : " + table.rows('.selected').data().length);
-                
             } );      
             $('#example tbody').on( 'click', 'td.select-checkbox', function () {
                 $(this).parent("tr").toggleClass('selected');

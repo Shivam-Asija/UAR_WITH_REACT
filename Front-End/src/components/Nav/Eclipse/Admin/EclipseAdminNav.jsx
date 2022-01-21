@@ -11,6 +11,7 @@ function EclipseAdminNav(props) {
             <img
               className="img-fluid d-block mt-1 pl-3 pt-4 pb-3"
               src={EclipseUarLogo}
+              alt=""
             />
           </div>
         </div>

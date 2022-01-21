@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { variables } from "../../../Variables";
 import TimManagerNav from "../../Nav/Tim/Manager/TimManagerNav";
 import DataTable from "../../DataTable/index";
-import TimMangerRequests from "./Requests";
 
 function TimMangerRequests() {
   const [data, setData] = useState([]);
