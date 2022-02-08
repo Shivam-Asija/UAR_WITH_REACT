@@ -207,6 +207,7 @@ tfoot input {
 .main-content {
   min-height: 69.15vh;
   margin-bottom: 4.5em;
+  background-color: #eee;
 }
 
 .tim-admin-portal-header {
@@ -453,8 +454,17 @@ input:checked ~ .accordion-content {
   margin: 0em 20em;
 }
 
+html {
+  background-color: #eeeeee;
+}
+
+.App {
+  background-color: #eeeeee;
+}
+
 body {
   overflow-x: hidden;
+  background-color: #eeeeee;
 }
 
 .status-data-form {

@@ -130,12 +130,13 @@ export class Home extends Component {
                       <div className="col-md-6">
                         <div className="col-lg-12" style={{ zIndex: "1" }}>
                           <div className="card pop-up rounded border-0 bg-light shadow">
-                            <a
+                            <NavLink
                               className="announcement-btn btn rounded btn-lg btn-secondary m-0"
-                              href="/Portal/Announcements"
+                              to="/Announcements"
+                              href="#"
                             >
                               <b className="text-dark">ANNOUNCEMENTS</b>
-                            </a>
+                            </NavLink>
                             <p
                               className="text-white mb-0 p-4 pb-0 shadow-lg"
                               style={{ background: "#00629B" }}

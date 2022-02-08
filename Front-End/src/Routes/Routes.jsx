@@ -18,6 +18,7 @@ import EclipseAdminChangesCompleted from "../Modules/Eclipse/Admin/ChangesComple
 import EclipseAdminPendingForReview from "../Modules/Eclipse/Admin/PendingForReview";
 import EclipseAdminApproved from "../Modules/Eclipse/Admin/Approved";
 import Request from "../Modules/Request/Request";
+import Announcements from "../Modules/Announcements/Announcements"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function Routes() {
@@ -77,6 +78,7 @@ function Routes() {
               component={EclipseAdminApproved}
             />
             <Route path="/Request" component={Request} />  
+            <Route path="/Announcements" component={Announcements} />  
   </>;
 }
 

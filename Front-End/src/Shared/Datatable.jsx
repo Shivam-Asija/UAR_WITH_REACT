@@ -106,7 +106,7 @@ export default function DataTable({data, path, submitButton}) {
                 }
                 );
             });
-            }, 2000);
+            }, 1500);
 
         return () => clearTimeout(timer);
     },[data]);
@@ -115,7 +115,7 @@ export default function DataTable({data, path, submitButton}) {
         const timer = setTimeout(() => {
             $(".table-container").css("display","block");
             $(".spinner-container").css("display","none");
-            }, 2000);
+            }, 1500);
         return () => clearTimeout(timer);
     },[data]);
     console.log("requestData: ",requestData);
