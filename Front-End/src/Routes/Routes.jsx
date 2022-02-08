@@ -1,6 +1,4 @@
 import React from 'react';
-import Header from "../Shared/Header";
-import Footer from "../Shared/Footer";
 import { Home } from "../Modules/Home";
 import TimManagerPending from "../Modules/Tim/Manager/Pending";
 import TimMangerRequests from "../Modules/Tim/Manager/Requests";

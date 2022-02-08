@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Modal, Button, InputGroup, FormControl } from "react-bootstrap";
-import { variables } from "../Routes/Variables";
+import { variables } from "../../Routes/Variables";
 import $ from "jquery";
 
 export const UserNameModal = ({show, setUserData, setLoggedIn}) => {
@@ -49,19 +49,29 @@ export const UserNameModal = ({show, setUserData, setLoggedIn}) => {
                 <Modal.Body  className='username-modal-body username-modal-body-responsive'>
                     <span className="error-message">Wrong Credentials</span>
                     <InputGroup className="mb-3 mt-3 source-username-input-box">
-                        <FormControl placeholder='Enter Username ...' id='login-username' className='username-input username-input-responsive'
-                        aria-label="Default"
-                        aria-describedby="inputGroup-sizing-default"
+                        <FormControl 
+                            placeholder='Enter Username ...'
+                            id='login-username' 
+                            className='username-input username-input-responsive'
+                            aria-label="Default"
+                            aria-describedby="inputGroup-sizing-default"
                         />                      
                     </InputGroup>
                     <InputGroup className="mb-3 mt-3 source-password-input-box">
-                        <FormControl placeholder='Enter Password ...' id='login-password' className='password-input password-input-responsive'
-                        aria-label="Default"
-                        aria-describedby="inputGroup-sizing-default"
+                        <FormControl 
+                            placeholder='Enter Password ...' 
+                            id='login-password' 
+                            className='password-input password-input-responsive'
+                            aria-label="Default"
+                            aria-describedby="inputGroup-sizing-default"
                         />
                       
                     </InputGroup>    
-                    <Button className='username-submit-btn' onClick={()=>getUserData()} variant="primary" type="submit">
+                    <Button 
+                        className='username-submit-btn' 
+                        onClick={()=>getUserData()} 
+                        variant="primary" 
+                        type="submit">
                         Submit
                     </Button>                                      
 

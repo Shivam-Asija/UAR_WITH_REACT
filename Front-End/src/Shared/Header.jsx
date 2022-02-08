@@ -17,7 +17,12 @@ function Header({username}) {
       expand="lg"
     >
       <Container>
-        <img id="logo" className="brand-icon" src={logo} alt="Logo" />;
+        <img 
+          id="logo" 
+          className="brand-icon" 
+          src={logo} 
+          alt="Logo" 
+        />;
         <NavLink className="navlink-header-button" id="nav-uar" to="/">
           User Access Review
         </NavLink>
