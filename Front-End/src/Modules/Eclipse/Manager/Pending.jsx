@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { variables } from "../../../ApiRoutes/Variables";
+import { variables } from "../../../Routes/Variables";
 import EclipseManagerNav from "../../Nav/Eclipse/Manager/EclipseManagerNav";
 import DataTable from "../../../Shared/Datatable";
 
@@ -23,13 +23,10 @@ function EclipseMangerPending() {
             loaded={true}
             data={data}
             submitButton={"Submit Approval"}
+            path="EclipseMangerPending"
           />
         ) : (
-          <DataTable
-            loaded={false}
-            data={data}
-            submitButton={"Submit Approval"}
-          />
+          ""
         )}
       </div>
     </div>

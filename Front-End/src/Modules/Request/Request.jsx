@@ -1,10 +1,11 @@
 import React from 'react'
-import { variables } from '../../ApiRoutes/Variables';
+import { variables } from '../../Routes/Variables';
 import TimAdminNav from '../Nav/Tim/Admin/TimAdminNav';
 import TimManagerNav from '../Nav/Tim/Manager/TimManagerNav';
 import { useEffect, useState } from 'react';
 import SearchIcon from "@material-ui/icons/Search";
 import $ from 'jquery';
+import { NavLink } from 'react-router-dom';
 
 export default function Request(data){
 
@@ -12,7 +13,7 @@ export default function Request(data){
     const [accessArray, setAccessArray] = useState([]);
     const [filteredUserData, setFilteredUserData] = useState([]);
     const [filteredAccessData, setFilteredAccessData] = useState([]);
-
+    console.log("state: ",data.location.state.path);
 
     useEffect(()=>{
         fetch(variables.API_URL + "users")
@@ -69,6 +70,8 @@ export default function Request(data){
         console.log(manager);;
     }
 
+    console.log("path: ", data.location.state);
+
     return(
         <div className="container-fluid">
         <><TimAdminNav/>
@@ -86,7 +89,7 @@ export default function Request(data){
                                     <b class="">UAR ID</b>
                                 </div>
                                 <div class="col-md-6">
-                                    <b class="ml-3">{data.location.state.UserAccessRequestId}</b>
+                                    <b class="ml-3">{data.location.state.requestData.Id || data.location.state.requestData.UserAccessRequestId}</b>
                                 </div>
                             </div>
                             <div class="row mt-4">
@@ -94,7 +97,7 @@ export default function Request(data){
                                     <b class="">Employee Name</b>
                                 </div>
                                 <div class="col-md-6">
-                                    <b class="ml-3">Cunningham, John</b>
+                                    <b class="ml-3">{data.location.state.requestData.FullName ? data.location.state.requestData.FullName : "Cunningham, John"}</b>
                                 </div>
                             </div>
                             <div class="row mt-4">
@@ -115,7 +118,7 @@ export default function Request(data){
                             </div>
                             <div class="row mt-4">
                                 <div class="col-md-6">
-                                    <a class="btn btn-secondary text-center shadow" href="/TimUser/Records?page=1&amp;pageSize=10&amp;sort=TblUser.Fullname%20ASC">Return To Records</a>
+                                    <NavLink className="btn btn-secondary text-center shadow" to={data.location.state.path}>Return To Records</NavLink>
                                 </div>
                             </div>
                             </form>
@@ -131,7 +134,8 @@ export default function Request(data){
                                     <div className="search">
                                         <div className="searchInputs">
                                             <input className='search-access-input' type="text" placeholder='Search Access Type' onChange={handleAccessFilter}/>
-                                            <div className="searchIcon"><SearchIcon/></div>
+                                            {/* <div className="searchIcon"><SearchIcon/></div> */}
+                                            
                                         </div>
                                         {
                                             filteredAccessData.length != 0 && 
@@ -142,7 +146,7 @@ export default function Request(data){
                                             )
                                         }   
                                     </div>
-                                    <button type="button" class="btn btn-info change-access-btn">Submit</button>
+                                    <button type="button" class="btn btn-info change-access-btn color-white">Submit</button>
 
                                 </div>
                             </div>
@@ -151,10 +155,10 @@ export default function Request(data){
                                 <label class="accordion-label" for="check2">REMOVE ACCESS</label>
                                 <div class="accordion-content">
                                     <div className="remove-access">
-                                        <button type="button" class="btn btn-info btn-lg">Remove Access</button>
+                                        <button type="button" class="btn btn-info btn-lg color-white">Remove Access</button>
                                     </div>
                                     <div className="remove-access-all">
-                                        <button type="button" class="btn btn-info btn-lg">Remove Access All</button>
+                                        <button type="button" class="btn btn-info btn-lg color-white">Remove Access All</button>
                                     </div>
                                 </div>
                             </div>
@@ -177,7 +181,7 @@ export default function Request(data){
                                             )
                                         }   
                                     </div>
-                                    <button type="button" class="btn btn-info change-access-btn">Submit</button>
+                                    <button type="button" class="btn btn-info change-access-btn color-white">Submit</button>
                                 </div>
                             </div>
                             <div class="accordion">
@@ -185,7 +189,7 @@ export default function Request(data){
                                 <label class="accordion-label" for="check4">TERMINATED</label>
                                 <div class="accordion-content">
                                     <h2>Terminate Employee</h2>
-                                    <button type="button" class="btn btn-info btn-lg">Terminate</button>                                    
+                                    <button type="button" class="btn btn-info btn-lg color-white">Terminate</button>                                    
                                 </div>
                             </div>                            
                         </div>

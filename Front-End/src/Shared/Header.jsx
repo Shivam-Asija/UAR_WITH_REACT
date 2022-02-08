@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../Images/SR_logo.svg";
+import logo from "../Shared/Images/SR_logo.svg";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
@@ -7,7 +7,7 @@ import Container from "react-bootstrap/Container";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { NavLink } from "react-router-dom";
 
-function Header() {
+function Header({username}) {
   return (
     <Navbar
       className="main-header"
@@ -60,7 +60,7 @@ function Header() {
             <Nav.Link className="website-management-btn" href="">
               WEBSITE MANAGEMENT
             </Nav.Link>
-            <Navbar.Text id="welcome-user">Welcome, chtr\P2670239</Navbar.Text>
+            <Navbar.Text id="welcome-user">Welcome, {username}</Navbar.Text>
           </Nav>
         </Navbar.Collapse>
       </Container>

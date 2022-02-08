@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import logo from "../Images/UARlogo.svg";
+import logo from "../Shared/Images/UARlogo.svg";
 import { Container } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 
@@ -17,7 +17,6 @@ export class Home extends Component {
                 }}
                 className="col"
               >
-                <h3 className="pl-4 mt-3"></h3>
                 <div className="py-1">
                   <div className="container">
                     <div className="row uar-logo">

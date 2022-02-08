@@ -3,21 +3,23 @@ import * as ReactBootStrap from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import "jquery/dist/jquery.min.js";
-import $ from "jquery"
+import $ from "jquery";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "datatables.net-dt/js/dataTables.dataTables.min.js";
 import "datatables.net-dt/css/jquery.dataTables.min.css";
-import "datatables.net-buttons/js/dataTables.buttons.js"
-import "datatables.net-buttons/js/buttons.colVis.js"
-import "datatables.net-buttons/js/buttons.flash.js"
-import "datatables.net-buttons/js/buttons.html5.js"
-import "datatables.net-buttons/js/buttons.print.js"
+import "datatables.net-buttons/js/dataTables.buttons.js";
+import "datatables.net-buttons/js/buttons.colVis.js";
+import "datatables.net-buttons/js/buttons.flash.js";
+import "datatables.net-buttons/js/buttons.html5.js";
+import "datatables.net-buttons/js/buttons.print.js";
+import { faEdit } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 let selectedRows = [];
 
-export default function DataTable({loaded, data, submitButton}) {
+export default function DataTable({data, path, submitButton}) {
 
-    const [requestData, setRequestData] = useState({})
+    const [requestData, setRequestData] = useState({});
 
     const columns = data[0] && Object.keys(data[0]);
     if (columns && columns.length > 6) {
@@ -27,12 +29,20 @@ export default function DataTable({loaded, data, submitButton}) {
 
         const timer = setTimeout(() => {
             $("#example tfoot th").each(function () {
-                // var title = $("#example thead th").eq($(this).index()).text();
-            // var title = $(this).text();
             $(this).html(
                 '<input style="text-align: center" type="text" placeholder="Search" />'
             );
             });
+
+            $(".edit-column").find("input").css("display","none");
+
+            $(document).ready(function(){
+                $(".sorting:last-child").removeClass("sorting");
+            });
+            $("body").on("click",function(){
+                $(".sorting:last-child").removeClass("sorting");
+            })
+
 
             // DataTable
                 var table = $("#example").DataTable({
@@ -77,15 +87,12 @@ export default function DataTable({loaded, data, submitButton}) {
                     finalData[key] = value;
 
                 }            
-                                    
                 setRequestData(finalData);
-            });
-            $('td').click( function () {
-                selectedRows = table.rows('.selected').data();
-                $("#row-count").html(" : " + table.rows('.selected').data().length);
-            } );      
+            });   
             $('#example tbody').on( 'click', 'td.select-checkbox', function () {
                 $(this).parent("tr").toggleClass('selected');
+                selectedRows = table.rows('.selected').data();
+                $("#row-count").html(" : " + table.rows('.selected').data().length);              
             });
             // Apply the search
             table
@@ -102,18 +109,16 @@ export default function DataTable({loaded, data, submitButton}) {
             }, 2000);
 
         return () => clearTimeout(timer);
-    },[]);
-
-    
+    },[data]);
 
     useEffect(() => {
         const timer = setTimeout(() => {
             $(".table-container").css("display","block");
             $(".spinner-container").css("display","none");
-
             }, 2000);
         return () => clearTimeout(timer);
-    },[]);
+    },[data]);
+    console.log("requestData: ",requestData);
 
 
     return (
@@ -138,26 +143,16 @@ export default function DataTable({loaded, data, submitButton}) {
                                 columns.map(column => <td>{row[column]}</td>)
                             }<td><NavLink className="edit-button" to={{
                                 pathname:"Request",
-                                state:requestData
-                            }}>Edit</NavLink></td>
+                                state:{requestData, path}
+                            }}><FontAwesomeIcon icon={faEdit} /></NavLink></td>
                             </tr>)}
                     </tbody>
                 </table>
-                {
-                    submitButton === "Reset Records" ? (
-                        <div class="d-md-flex justify-content-between text-right col-md-12 align-items-center flex-row-reverse py-0 my-4 submit-approval-div">
-                            <p class="text-light py-0 my-0 w-25">
-                                <input type="submit" name="SubmitApprovals" value="Reset Record" class=" submit-approval reset-records btn btn-warning text-center w-75 my-2 shadow" id="resetRecords"/>
-                            </p>
-                        </div>  
-                    ) : (
-                        <div class="d-md-flex justify-content-between text-right col-md-12 align-items-center flex-row-reverse py-0 my-4 submit-approval-div">
-                            <p class="text-light py-0 my-0 w-25">
-                                <input type="submit" name="SubmitApprovals" value="Submit Approvals" class="submit-approval reset-records btn btn-warning text-center w-75 my-2 shadow" id="submitApprovals"/>
-                            </p>
-                        </div>                    
-                    )         
-                }                
+                <div class="d-md-flex justify-content-between text-right col-md-12 align-items-center flex-row-reverse py-0 my-4 submit-approval-div">
+                    <p class="text-light py-0 my-0 w-25">
+                        <input type="submit" name="SubmitApprovals" value={submitButton === "Reset Records" ? "Reset Record" : "Submit Approvals"} class=" submit-approval reset-records btn btn-warning text-center w-75 my-2 shadow" id={submitButton === "resetRecords" ? "Reset Record" : "submitApprovals"}/>
+                    </p>
+                </div>                            
             </div>
         </div>
     )

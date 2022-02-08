@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { variables } from "../../../ApiRoutes/Variables";
+import { variables } from "../../../Routes/Variables";
 import EclipseAdminNav from "../../Nav/Eclipse/Admin/EclipseAdminNav";
 import DataTable from "../../../Shared/Datatable";
 
@@ -19,9 +19,9 @@ function EclipseAdminRequestsForChange() {
       <div className="container-fluid request-data">
         <EclipseAdminNav />
         {load === "loaded" ? (
-          <DataTable loaded={true} data={data} submitButton={"Reset Records"} />
+          <DataTable loaded={true} data={data} submitButton={"Reset Records"} path="EclipseAdminRequestsForChange" />
         ) : (
-          <DataTable loaded={false} data={data} />
+          ""
         )}
       </div>
     </div>

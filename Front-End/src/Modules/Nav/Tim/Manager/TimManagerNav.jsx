@@ -1,5 +1,5 @@
 import React from "react";
-import TimUarLogo from "../../../../Images/TIMUARLOGO.svg";
+import TimUarLogo from "../../../../Shared/Images/TIMUARLOGO.svg";
 import { NavLink } from "react-router-dom";
 
 function TimManagerNav(props) {
@@ -11,6 +11,7 @@ function TimManagerNav(props) {
             <img
               className="img-fluid d-block mt-1 pl-3 pt-4 pb-3"
               src={TimUarLogo}
+              alt=""
             />
           </div>
         </div>

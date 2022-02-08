@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { variables } from "../../../ApiRoutes/Variables";
+import { variables } from "../../../Routes/Variables";
 import TimManagerNav from "../../Nav/Tim/Manager/TimManagerNav";
 import DataTable from "../../../Shared/Datatable";
 
@@ -23,6 +23,7 @@ const TimManagerApproved = () => {
           className="tim-manager-table"
           data={data}
           submitButton={"Submit Approval"}
+          path="TimManagerApproved"
         />
       ) : (
         ""

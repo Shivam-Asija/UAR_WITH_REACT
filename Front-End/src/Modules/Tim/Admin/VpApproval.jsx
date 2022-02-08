@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { variables } from "../../../ApiRoutes/Variables";
+import { variables } from "../../../Routes/Variables";
 import TimAdminNav from "../../Nav/Tim/Admin/TimAdminNav";
 import DataTable from "../../../Shared/Datatable";
 
@@ -23,6 +23,7 @@ function TimAdminVpApproval() {
             className="tim-admin-table"
             data={data}
             submitButton={"Reset Records"}
+            path="TimAdminVpApproval"
           />
         ) : (
           ""

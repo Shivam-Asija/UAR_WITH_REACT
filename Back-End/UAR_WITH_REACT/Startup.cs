@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.Negotiate;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -31,6 +32,8 @@ namespace UAR_WITH_REACT
         {
 
             services.AddControllers();
+
+            services.AddAuthentication(NegotiateDefaults.AuthenticationScheme).AddNegotiate();
             services.AddDbContext<UARAuditAppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DbConnection")));
             services.AddSwaggerGen(c =>
             {
@@ -60,6 +63,8 @@ namespace UAR_WITH_REACT
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 

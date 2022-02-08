@@ -1,5 +1,5 @@
 import React from "react";
-import EclipseUarLogo from "../../../../Images/EclipseUarLogo.svg";
+import EclipseUarLogo from "../../../../Shared/Images/EclipseUarLogo.svg";
 import { NavLink } from "react-router-dom";
 
 function EclipseAdminNav(props) {

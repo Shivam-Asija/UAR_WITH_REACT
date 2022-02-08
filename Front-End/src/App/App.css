@@ -464,7 +464,7 @@ body {
 .edit-button {
   text-decoration: none;
   background: #e6b800;
-  padding: 0.3em;
+  padding: 0.3em 1em 0.4em 1em;
   color: white;
   border-radius: 4px;
   font-weight: bold;
@@ -473,6 +473,7 @@ body {
 .edit-button:hover {
   color: white;
   background-color: #ffc108;
+  border: 1px solid #ffc107;
 }
 
 .title-request {
@@ -524,8 +525,7 @@ body {
   margin-top: 1em;
 }
 
-.search-manager-input,
-.search-access-input {
+.search-manager-input {
   width: 20em;
 }
 
@@ -577,4 +577,13 @@ body {
 table.dataTable {
   margin-bottom: 1em !important;
   padding-top: 1em !important;
+}
+
+.color-white {
+  color: white !important;
+}
+
+.error-message {
+  color: Red;
+  display: none;
 }

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { variables } from "../../../ApiRoutes/Variables";
+import { variables } from "../../../Routes/Variables";
 import TimManagerNav from "../../Nav/Tim/Manager/TimManagerNav";
 import DataTable from "../../../Shared/Datatable";
 
@@ -23,9 +23,10 @@ function TimMangerRequests() {
             loaded={true}
             data={data}
             submitButton={"Submit Approval"}
+            path="TimMangerRequests"
           />
         ) : (
-          <DataTable loaded={false} data={data} />
+          ""
         )}
       </div>
     </div>
