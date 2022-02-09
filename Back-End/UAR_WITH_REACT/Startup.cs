@@ -34,8 +34,6 @@ namespace UAR_WITH_REACT
 
             services.AddControllers();
 
-            services.AddMicrosoftIdentityWebApiAuthentication(Configuration);
-
             services.AddAuthentication(NegotiateDefaults.AuthenticationScheme).AddNegotiate();
             services.AddDbContext<UARAuditAppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DbConnection")));
             services.AddSwaggerGen(c =>
