@@ -148,12 +148,12 @@ export class Home extends Component {
                             </p>
                           </div>
                           <div className="card-popup-kpi my-4 card pop-up rounded- border-0 shadow">
-                            <a
+                            <NavLink
                               className="btn rounded btn-lg"
-                              href="/Kpi/Eclipse"
+                              to="KpiResultsComponent"
                             >
                               <b className="text-light">KPI RESULTS</b>
-                            </a>
+                            </NavLink>
                           </div>
                           <div className="card border-0 pop-up rounded-0 shadow">
                             <a

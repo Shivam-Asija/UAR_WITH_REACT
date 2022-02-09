@@ -1,0 +1,11 @@
+.table-container {
+  margin-top: none !important;
+}
+
+.kpi-datatable .dt-buttons {
+  margin-top: 0.5em;
+}
+
+.kpi-datatable tbody td {
+  padding: 2px 4px !important;
+}

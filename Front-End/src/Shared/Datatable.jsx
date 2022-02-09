@@ -14,8 +14,16 @@ import "datatables.net-buttons/js/buttons.html5.js";
 import "datatables.net-buttons/js/buttons.print.js";
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { css } from "@emotion/react";
+import RingLoader from "react-spinners/RingLoader";
 
 let selectedRows = [];
+
+const override = css`
+  display: block;
+  margin: 0 auto;
+  border-color: red;
+`;
 
 export default function DataTable({data, path, submitButton}) {
 
@@ -124,11 +132,8 @@ export default function DataTable({data, path, submitButton}) {
     return (
         <div className="table-data-container">
             <div className="spinner-container">
-            <ReactBootStrap.Spinner animation="border" role="status">
-                <span id="spinner" className="visually-hidden">
-                Loading...
-                </span>
-            </ReactBootStrap.Spinner>
+            {/* <Watch id="spinner" color="#00BFFF" height={80} width={80} /> */}
+            <RingLoader id="spinner" color="#2CD1BE" loading={true} css={override} size={150} />
             </div>
             <div className="table-container">
                 <table id="example" className="table table-light table-striped">
@@ -148,6 +153,7 @@ export default function DataTable({data, path, submitButton}) {
                             </tr>)}
                     </tbody>
                 </table>
+                
                 <div class="d-md-flex justify-content-between text-right col-md-12 align-items-center flex-row-reverse py-0 my-4 submit-approval-div">
                     <p class="text-light py-0 my-0 w-25">
                         <input type="submit" name="SubmitApprovals" value={submitButton === "Reset Records" ? "Reset Record" : "Submit Approvals"} class=" submit-approval reset-records btn btn-warning text-center w-75 my-2 shadow" id={submitButton === "resetRecords" ? "Reset Record" : "submitApprovals"}/>

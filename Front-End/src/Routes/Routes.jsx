@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Home } from "../Modules/Home";
 import TimManagerPending from "../Modules/Tim/Manager/Pending";
 import TimMangerRequests from "../Modules/Tim/Manager/Requests";
@@ -19,7 +20,7 @@ import EclipseAdminPendingForReview from "../Modules/Eclipse/Admin/PendingForRev
 import EclipseAdminApproved from "../Modules/Eclipse/Admin/Approved";
 import Request from "../Modules/Request/Request";
 import Announcements from "../Modules/Announcements/Announcements"
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import KpiResultsComponent from '../Modules/KpiResults/KpiResultsComponent';
 
 function Routes() {
   return <>
@@ -79,6 +80,7 @@ function Routes() {
             />
             <Route path="/Request" component={Request} />  
             <Route path="/Announcements" component={Announcements} />  
+            <Route path="/KpiResultsComponent" component={KpiResultsComponent} />  
   </>;
 }
 

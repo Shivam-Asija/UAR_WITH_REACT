@@ -8,6 +8,7 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import { NavLink } from "react-router-dom";
 
 function Header({username}) {
+
   return (
     <Navbar
       className="main-header"
@@ -74,3 +75,8 @@ function Header({username}) {
 }
 
 export default Header;
+
+Header.defaultProps = {
+    username: "admin"
+}
+

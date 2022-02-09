@@ -4,6 +4,7 @@ import Footer from "../Shared/Footer";
 import { BrowserRouter as Router, Switch } from "react-router-dom";
 import Routes from "../Routes/Routes"
 import React, { useState } from "react";
+// import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import { UserNameModal } from "../Modules/LoginModal/UserNameModal"
 
 function App() {

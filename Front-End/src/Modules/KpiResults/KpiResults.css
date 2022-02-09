@@ -1,0 +1,32 @@
+.kpiresults-bar {
+  background-image: linear-gradient(to bottom, #a0a0a0, #606060);
+  background-position: top left;
+  background-size: 100%;
+  background-repeat: repeat;
+}
+
+.after-header-bar {
+  background-color: #eee;
+  height: 2em;
+}
+
+.btn-primary {
+  background-color: #00629b !important;
+}
+
+.Eclipse-tab {
+  border-left: 3px solid #e4eced;
+}
+
+.Tim-tab {
+  border-right: 1px solid #e1e1e1;
+}
+
+.bg-success {
+  background-color: #009e8c !important;
+}
+
+.card-kpi:hover {
+  transform: none;
+  box-shadow: none;
+}
