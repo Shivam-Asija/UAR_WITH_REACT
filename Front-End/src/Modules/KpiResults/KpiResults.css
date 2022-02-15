@@ -30,3 +30,7 @@
   transform: none;
   box-shadow: none;
 }
+
+.kpi-card {
+  max-width: 50%;
+}

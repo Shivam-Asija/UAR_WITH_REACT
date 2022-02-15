@@ -4,12 +4,18 @@ import Footer from "../Shared/Footer";
 import { BrowserRouter as Router, Switch } from "react-router-dom";
 import Routes from "../Routes/Routes"
 import React, { useState } from "react";
-// import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
-import { UserNameModal } from "../Modules/LoginModal/UserNameModal"
+import { variables } from "../Routes/Variables";
+// import { UserNameModal } from "../Modules/LoginModal/UserNameModal"
+// import { useEffect } from "react";
 
 function App() {
-  const [userData, setUserData] = useState({})
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [username, setUsername] = useState("")
+  // const [loggedIn, setLoggedIn] = useState(false);
+
+  fetch(variables.API_URL + "loginUsername")
+  .then((response) => response.text())
+  .then((json) => setUsername(json))
+
 
   return (
     <Router>
@@ -19,7 +25,7 @@ function App() {
             <UserNameModal show={true} setLoggedIn={setLoggedIn} setUserData={setUserData}/>  
         ) : ""
       } */}
-        <Header username={userData.username}/>
+        <Header username={username}/>
         <div className="main-content">
           <Switch>
             <Routes />

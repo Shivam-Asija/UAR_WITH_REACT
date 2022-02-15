@@ -3,7 +3,7 @@ import { Doughnut } from 'react-chartjs-2';
 import { Chart, registerables } from "chart.js";
 Chart.register(...registerables);
 
-const DoughnutChart = () => {
+const DoughnutChart = ({pending, change, approved}) => {
   return (
         <div>
           <Doughnut
@@ -12,7 +12,7 @@ const DoughnutChart = () => {
               labels: ["Approved", "ChangeRequests", "Pending"],
               datasets: [
                 {
-                  data: [2,4,10],
+                  data: [approved,change,pending],
                   backgroundColor: ["#198754", "#00629B", "#787878"],
                   font: {
                     size: 30,

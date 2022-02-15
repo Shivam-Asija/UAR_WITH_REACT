@@ -8,4 +8,15 @@
 
 .kpi-datatable tbody td {
   padding: 2px 4px !important;
+  white-space: nowrap;
+}
+
+.kpi-table-container {
+  margin-top: 0 !important;
+}
+
+.kpi-table-data {
+  max-height: 67vh;
+  overflow-y: auto;
+  display: block;
 }

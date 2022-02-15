@@ -1,7 +1,4 @@
-import React, {useState, useEffect } from "react";
-import * as ReactBootStrap from "react-bootstrap";
-import { NavLink } from "react-router-dom";
-import "jquery/dist/jquery.min.js";
+import React, {useEffect, useState } from "react";
 import $ from "jquery";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "datatables.net-dt/js/dataTables.dataTables.min.js";
@@ -23,9 +20,7 @@ const override = css`
   border-color: red;
 `;
 
-export default function KpiDataTable({data, path, submitButton}) {
-
-    const [requestData, setRequestData] = useState({});
+export default function KpiDataTable({data, setPending, setChange, setApproved}) {
 
     const columns = data[0] && Object.keys(data[0]);
     if (columns && columns.length > 6) {
@@ -45,9 +40,7 @@ export default function KpiDataTable({data, path, submitButton}) {
                 var table = $("#example").DataTable({
 
                     columnDefs: [{
-                    orderable: false,
-                    // className: 'select-checkbox',
-                    //             targets: 0
+                        orderable: false,
                     }],
                     select: {
                         style: 'multi',
@@ -73,7 +66,25 @@ export default function KpiDataTable({data, path, submitButton}) {
                 }
                 );
             });
-            }, 1500);
+            }, 2000);
+
+        if (data.length > 0) {
+            console.log("data: ",data);
+            let pendingCount = 0;
+            let changeCount = 0;
+            let approvedCount = 0; 
+       
+            for (let i = 0; i < data.length; i++) {
+                const element = data[i];
+                pendingCount += parseInt(element.QuantityPending);
+                changeCount += parseInt(element.QuantityChanged);
+                approvedCount += parseInt(element.QuantityApproved);            
+            }
+            setPending(pendingCount);
+            setChange(changeCount);
+            setApproved(approvedCount);
+            console.log("pending: ",pendingCount, "change: ",changeCount, "approved: ",approvedCount);
+        }            
 
         return () => clearTimeout(timer);
     },[data]);
@@ -82,10 +93,9 @@ export default function KpiDataTable({data, path, submitButton}) {
         const timer = setTimeout(() => {
             $(".table-container").css("display","block");
             $(".spinner-container").css("display","none");
-            }, 1500);
+            }, 2000);
         return () => clearTimeout(timer);
     },[data]);
-    console.log("requestData: ",requestData);
 
 
     return (
@@ -93,8 +103,8 @@ export default function KpiDataTable({data, path, submitButton}) {
             <div className="spinner-container">
             <RingLoader id="spinner" color="#2CD1BE" loading={true} css={override} size={150} />
             </div>
-            <div className="table-container">
-                <table id="example" className="table table-light table-striped">
+            <div className="table-container kpi-table-container">
+                <table id="example" className="table table-light table-striped kpi-table-data">
                     <thead>
                         <tr  className="th-sm">{data[0] && columns.map((heading) => <th>{heading}</th>)}</tr>
                         </thead>

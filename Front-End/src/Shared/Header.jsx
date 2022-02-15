@@ -13,7 +13,6 @@ function Header({username}) {
     <Navbar
       className="main-header"
       fixed="top"
-      expand="sm"
       variant="dark"
       expand="lg"
     >

@@ -26,5 +26,12 @@ namespace UAR_WITH_REACT.Controllers
         {
             return await _context.VwAuditKpis.Where(b=> b.SystemId == "Tim").ToListAsync();
         }
+
+        //[HttpGet("Eclipse")]
+        //public async Task<ActionResult<IEnumerable<VwAuditKpi>>> GetTblVpApprovals(string target)
+        //{
+        //    return await _context.VwAuditKpis.Where(b => b.SystemId == "Tim").ToListAsync();
+        //}
+
     }
 }
