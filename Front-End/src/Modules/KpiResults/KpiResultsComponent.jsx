@@ -19,14 +19,17 @@ function KpiResultsComponent() {
 
 
     useEffect(() => {
-        fetch(variables.API_URL + "VMAuditKpi")
+        fetch(variables.API_URL + "VMAuditKpi/Eclipse")
         .then((response) => response.json())
         .then((json) => setData(json))       
         .then(setload(true));
     },[]);
 
     const fetchData = (target) => {
-        setData(data);     
+        fetch(variables.API_URL + "VMAuditKpi/"+ target)
+        .then((response) => response.json())
+        .then((json) => setData(json))       
+        .then(setload(true));        
         setPending(pending);
         setChange(change);
         setApproved(approved);        
