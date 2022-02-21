@@ -11,23 +11,26 @@ function TimMangerRequests() {
     fetch(variables.API_URL + "ChangeRequests")
       .then((response) => response.json())
       .then((json) => setData(json))
-      .then(setload("loaded"));
+      .then(setload(true));
   }, []);
+
+  let datatable = "";
+  if (load) {
+    datatable = (
+      <DataTable
+        loaded={true}
+        data={data}
+        submitButton={"Submit Approval"}
+        path="TimMangerRequests"
+      />
+    );
+  }
 
   return (
     <div className="TimManagerRequest">
       <div className="container-fluid request-data">
         <TimManagerNav heading="REQUEST FOR CHANGES" />
-        {load === "loaded" ? (
-          <DataTable
-            loaded={true}
-            data={data}
-            submitButton={"Submit Approval"}
-            path="TimMangerRequests"
-          />
-        ) : (
-          ""
-        )}
+        {datatable}
       </div>
     </div>
   );

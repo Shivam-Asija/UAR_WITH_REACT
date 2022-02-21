@@ -16,7 +16,7 @@ function EclipseManagerNav(props) {
           </div>
         </div>
       </div>
-      <div className="container-fluid">
+      <div className="container-fluid remove-padding">
         <div className="px-0 py-0 border-light shadow">
           <div className="container-fluid">
             <div className="row">
@@ -35,7 +35,7 @@ function EclipseManagerNav(props) {
                     <NavLink
                       id="eclipseMangerPending"
                       className="eclipse-manager-nav btn rounded-0 text-center border-right w-100 m-0 py-3 text-muted btn-lg "
-                      to="EclipseMangerPending"
+                      to="EclipseManagerPending"
                     >
                       PENDING
                     </NavLink>
@@ -44,7 +44,7 @@ function EclipseManagerNav(props) {
                     <NavLink
                       id="eclipseManagerRequests"
                       className="eclipse-manager-nav btn rounded-0 text-center border-right w-100 m-0 py-3 text-muted btn-lg "
-                      to="EclipseMangerRequests"
+                      to="EclipseManagerRequests"
                     >
                       REQUEST
                     </NavLink>
@@ -53,7 +53,7 @@ function EclipseManagerNav(props) {
                     <NavLink
                       id="eclipse-manager-approved"
                       className="eclipse-manager-nav btn rounded-0 text-center border-right w-100 m-0 py-3 text-muted btn-lg "
-                      to="EclipseMangerApproved"
+                      to="EclipseManagerApproved"
                     >
                       APPROVED
                     </NavLink>

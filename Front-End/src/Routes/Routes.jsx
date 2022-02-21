@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Home } from "../Modules/Home";
 import TimManagerPending from "../Modules/Tim/Manager/Pending";
@@ -19,69 +19,59 @@ import EclipseAdminChangesCompleted from "../Modules/Eclipse/Admin/ChangesComple
 import EclipseAdminPendingForReview from "../Modules/Eclipse/Admin/PendingForReview";
 import EclipseAdminApproved from "../Modules/Eclipse/Admin/Approved";
 import Request from "../Modules/Request/Request";
-import Announcements from "../Modules/Announcements/Announcements"
-import KpiResultsComponent from '../Modules/KpiResults/KpiResultsComponent';
+import Announcements from "../Modules/Announcements/Announcements";
+import KpiResultsComponent from "../Modules/KpiResults/KpiResultsComponent";
 
 function Routes() {
-  return <>
-            <Route path="/" exact component={Home} />
-            <Route path="/TimManagerPending" component={TimManagerPending} />
-            <Route path="/TimManagerRequests" component={TimMangerRequests} />
-            <Route path="/TimManagerApproved" component={TimManagerApproved} />
-            <Route
-              path="/TimAdminRequestsForChange"
-              component={TimAdminRequestsForChange}
-            />
-            <Route
-              path="/TimAdminPendingChanges"
-              component={TimAdminPendingChanges}
-            />
-            <Route
-              path="/TimAdminChangesCompleted"
-              component={TimAdminChangesCompleted}
-            />
-            <Route
-              path="/TimAdminPendingForReview"
-              component={TimAdminPendingForReview}
-            />
-            <Route path="/TimAdminApproved" component={TimAdminApproved} />
-            <Route path="/TimAdminVpApproval" component={TimAdminVpApproval} />
-            <Route
-              path="/EclipseMangerPending"
-              component={EclipseMangerPending}
-            />
-            <Route
-              path="/EclipseMangerRequests"
-              component={EclipseMangerRequests}
-            />
-            <Route
-              path="/EclipseMangerApproved"
-              component={EclipseMangerApproved}
-            />
-            <Route
-              path="/EclipseAdminRequestsForChange"
-              component={EclipseAdminRequestsForChange}
-            />
-            <Route
-              path="/EclipseAdminPendingChanges"
-              component={EclipseAdminPendingChanges}
-            />
-            <Route
-              path="/EclipseAdminChangesCompleted"
-              component={EclipseAdminChangesCompleted}
-            />
-            <Route
-              path="/EclipseAdminPendingForReview"
-              component={EclipseAdminPendingForReview}
-            />
-            <Route
-              path="/EclipseAdminApproved"
-              component={EclipseAdminApproved}
-            />
-            <Route path="/Request" component={Request} />  
-            <Route path="/Announcements" component={Announcements} />  
-            <Route path="/KpiResultsComponent" component={KpiResultsComponent} />  
-  </>;
+  return (
+    <>
+      <Route path="/" exact component={Home} />
+      <Route path="/TimManagerPending" component={TimManagerPending} />
+      <Route path="/TimManagerRequests" component={TimMangerRequests} />
+      <Route path="/TimManagerApproved" component={TimManagerApproved} />
+      <Route
+        path="/TimAdminRequestsForChange"
+        component={TimAdminRequestsForChange}
+      />
+      <Route
+        path="/TimAdminPendingChanges"
+        component={TimAdminPendingChanges}
+      />
+      <Route
+        path="/TimAdminChangesCompleted"
+        component={TimAdminChangesCompleted}
+      />
+      <Route
+        path="/TimAdminPendingForReview"
+        component={TimAdminPendingForReview}
+      />
+      <Route path="/TimAdminApproved" component={TimAdminApproved} />
+      <Route path="/TimAdminVpApproval" component={TimAdminVpApproval} />
+      <Route path="/EclipseManagerPending" component={EclipseMangerPending} />
+      <Route path="/EclipseManagerRequests" component={EclipseMangerRequests} />
+      <Route path="/EclipseManagerApproved" component={EclipseMangerApproved} />
+      <Route
+        path="/EclipseAdminRequestsForChange"
+        component={EclipseAdminRequestsForChange}
+      />
+      <Route
+        path="/EclipseAdminPendingChanges"
+        component={EclipseAdminPendingChanges}
+      />
+      <Route
+        path="/EclipseAdminChangesCompleted"
+        component={EclipseAdminChangesCompleted}
+      />
+      <Route
+        path="/EclipseAdminPendingForReview"
+        component={EclipseAdminPendingForReview}
+      />
+      <Route path="/EclipseAdminApproved" component={EclipseAdminApproved} />
+      <Route path="/Request" component={Request} />
+      <Route path="/Announcements" component={Announcements} />
+      <Route path="/KpiResultsComponent" component={KpiResultsComponent} />
+    </>
+  );
 }
 
 export default Routes;

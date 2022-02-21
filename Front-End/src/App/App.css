@@ -597,3 +597,26 @@ table.dataTable {
   color: Red;
   display: none;
 }
+
+.remove-padding {
+  padding: 0px !important;
+}
+
+.remove-text-decoration {
+  text-decoration: none;
+  color: black;
+}
+
+#admin-menu > .MuiPopover-paper {
+  margin-top: 1.5em;
+  min-width: 10em !important;
+}
+
+#manager-menu > .MuiPopover-paper {
+  margin-top: 1.5em;
+  min-width: 10em !important;
+}
+
+#SpectrumReach-Logo {
+  width: 11em;
+}

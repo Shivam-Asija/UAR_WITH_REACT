@@ -8,26 +8,28 @@ const TimManagerApproved = () => {
   const [load, setload] = useState("");
 
   useEffect(() => {
-    fetch(variables.API_URL + "VMAuditKpi")
+    fetch(variables.API_URL + "EclipseManagerPending")
       .then((response) => response.json())
       .then((json) => setData(json))
-      .then(setload("loaded"));
+      .then(setload(true));
   }, []);
+
+  let datatable = "";
+  if (load) {
+    datatable = (
+      <DataTable
+        loaded={true}
+        data={data}
+        submitButton={"Submit Approval"}
+        path="TimManagerApproved"
+      />
+    );
+  }
 
   return (
     <div className="container-fluid request-data">
       <TimManagerNav heading="APPROVED" />
-
-      {load === "loaded" ? (
-        <DataTable
-          className="tim-manager-table"
-          data={data}
-          submitButton={"Submit Approval"}
-          path="TimManagerApproved"
-        />
-      ) : (
-        ""
-      )}
+      {datatable}
     </div>
   );
 };

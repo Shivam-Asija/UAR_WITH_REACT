@@ -106,7 +106,7 @@ export class Home extends Component {
                                             <small className="form-text text-muted text-right"></small>
                                           </div>
                                           <NavLink
-                                            to="/EclipseMangerPending"
+                                            to="/EclipseManagerPending"
                                             className="eclipse-card-btn btn home-eclipse-btn text-light border text-center shadow btn-lg w-75 btn-info"
                                           >
                                             <b>ECLIPSE</b>

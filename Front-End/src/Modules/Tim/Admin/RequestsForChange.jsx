@@ -12,26 +12,30 @@ function TimAdminRequestsForChange() {
   }, []);
 
   const loadData = async () => {
-    fetch(variables.API_URL + "VMAuditKpi")
+    fetch(variables.API_URL + "EclipseManagerPending")
       .then((response) => response.json())
       .then((json) => setData(json))
       .then(setload(true));
+  };
+
+  let datatable = "";
+
+  if (load) {
+    datatable = (
+      <DataTable
+        loaded={true}
+        data={data}
+        submitButton={"Reset Records"}
+        path="TimAdminRequestsForChange"
+      />
+    );
   }
 
   return (
     <div className="TimManagerRequest">
       <div className="container-fluid request-data">
         <TimAdminNav />
-        {load  ? (
-          <DataTable
-            className="tim-admin-table"
-            data={data}
-            path="TimAdminRequestsForChange"
-            submitButton={"Reset Records"}
-          />
-        ) : (
-          ""
-        )}
+        {datatable}
       </div>
     </div>
   );

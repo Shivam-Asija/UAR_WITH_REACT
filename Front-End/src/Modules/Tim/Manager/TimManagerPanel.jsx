@@ -11,14 +11,14 @@ function TimMangerRequests() {
     fetch(variables.API_URL + "ChangeRequests")
       .then((response) => response.json())
       .then((json) => setData(json))
-      .then(setload("loaded"));
+      .then(setload(true));
   }, []);
 
   return (
     <div className="TimManagerRequest">
       <div className="container-fluid request-data">
         <TimManagerNav heading="REQUEST FOR CHANGES" />
-        {load === "loaded" ? <DataTable data={data} /> : ""}
+        {load ? <DataTable data={data} /> : ""}
       </div>
     </div>
   );

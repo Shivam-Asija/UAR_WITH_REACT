@@ -16,7 +16,7 @@ function TimManagerNav(props) {
           </div>
         </div>
       </div>
-      <div className="container-fluid">
+      <div className="container-fluid remove-padding">
         <div className="px-0 py-0 border-light shadow">
           <div className="container-fluid">
             <div className="row">

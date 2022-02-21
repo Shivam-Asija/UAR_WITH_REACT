@@ -11,22 +11,27 @@ function EclipseAdminApproved() {
     fetch(variables.API_URL + "VMAuditKpi")
       .then((response) => response.json())
       .then((json) => setData(json))
-      .then(setload("loaded"));
+      .then(setload(true));
   }, []);
+
+  let datatable = "";
+
+  if (load) {
+    datatable = (
+      <DataTable
+        loaded={true}
+        data={data}
+        submitButton={"Reset Records"}
+        path="EclipseAdminApproved"
+      />
+    );
+  }
 
   return (
     <div className="EclipseAdminPending">
       <div className="container-fluid request-data">
         <EclipseAdminNav />
-        {load === "loaded" ? (
-          <DataTable 
-            loaded={true}
-            data={data} 
-            submitButton={"Reset Records"} 
-            path="EclipseAdminApproved" />
-        ) : (
-          ""
-        )}
+        {datatable}
       </div>
     </div>
   );

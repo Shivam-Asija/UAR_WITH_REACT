@@ -11,23 +11,27 @@ function EclipseMangerApproved() {
     fetch(variables.API_URL + "ChangeRequests")
       .then((response) => response.json())
       .then((json) => setData(json))
-      .then(setload("loaded"));
+      .then(setload(true));
   }, []);
+
+  let datatable = "";
+
+  if (load) {
+    datatable = (
+      <DataTable
+        loaded={true}
+        data={data}
+        submitButton={"Submit Approval"}
+        path="EclipseManagerApproved"
+      />
+    );
+  }
 
   return (
     <div className="EclipseManagerApproved">
       <div className="container-fluid request-data">
         <EclipseManagerNav heading="APPROVED" />
-        {load === "loaded" ? (
-          <DataTable
-            loaded={true}
-            data={data}
-            submitButton={"Submit Approval"}
-            path="EclipseMangerApproved"
-          />
-        ) : (
-          ""
-        )}
+        {datatable}
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 // A custom theme for this app
-import { createMuiTheme } from "@material-ui/core/styles";
+import { createTheme } from "@material-ui/core/styles";
 
 const Theme = {
   typography: {
@@ -99,6 +99,6 @@ const Theme = {
   },
 };
 
-const InternalTheme = createMuiTheme(Theme);
+const InternalTheme = createTheme(Theme);
 
 export default InternalTheme;

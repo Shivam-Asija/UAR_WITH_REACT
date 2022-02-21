@@ -8,26 +8,30 @@ function TimAdminPendingForReview() {
   const [load, setload] = useState("");
 
   useEffect(() => {
-    fetch(variables.API_URL + "VMAuditKpi")
+    fetch(variables.API_URL + "EclipseManagerPending")
       .then((response) => response.json())
       .then((json) => setData(json))
-      .then(setload("loaded"));
+      .then(setload(true));
   }, []);
+
+  let datatable = "";
+
+  if (load) {
+    datatable = (
+      <DataTable
+        loaded={true}
+        data={data}
+        submitButton={"Reset Records"}
+        path="TimAdminPendingForReview"
+      />
+    );
+  }
 
   return (
     <div className="TimManagerRequest">
       <div className="container-fluid request-data">
         <TimAdminNav />
-        {load === "loaded" ? (
-          <DataTable
-            className="tim-admin-table"
-            data={data}
-            submitButton={"Reset Records"}
-            path="TimAdminPendingForReview"            
-          />
-        ) : (
-          ""
-        )}
+        {datatable}
       </div>
     </div>
   );
