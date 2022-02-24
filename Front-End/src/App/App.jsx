@@ -3,8 +3,9 @@ import Header from "../Shared/Header";
 import Footer from "../Shared/Footer";
 import { BrowserRouter as Router, Switch } from "react-router-dom";
 import Routes from "../Routes/Routes";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { variables } from "../Routes/Variables";
+import { BottomNavigation } from "@mui/material";
 // import { UserNameModal } from "../Modules/LoginModal/UserNameModal"
 // import { useEffect } from "react";
 
@@ -12,10 +13,17 @@ function App() {
   const [username, setUsername] = useState("");
   // const [loggedIn, setLoggedIn] = useState(false);
 
-  fetch(variables.API_URL + "loginUsername")
-    .then((response) => response.text())
-    .then((json) => setUsername(json))
-    .then(console.log("username : ", username));
+  // fetch(variables.API_URL + "loginUsername")
+  //   .then((response) => response.text())
+  //   .then((json) => setUsername(json))
+  //   .then(console.log("username : ", username));
+
+  // useEffect(() => {
+  //   fetch(variables.API_URL + "authentication")
+  //     .then((response) => response.text())
+  //     .then((json) => setUsername(json))
+  //     .then(console.log("authentication : ", username));
+  // });
 
   return (
     <Router>

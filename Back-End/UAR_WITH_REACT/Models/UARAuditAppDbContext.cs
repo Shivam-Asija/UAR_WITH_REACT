@@ -39,7 +39,6 @@ namespace UAR_WITH_REACT.Models
         public virtual DbSet<VwJobStatus> VwJobStatuses { get; set; }
         public virtual DbSet<VwVpApproval> VwVpApprovals { get; set; }
         public virtual DbSet<VwVpApprovalRequired> VwVpApprovalRequireds { get; set; }
-        public virtual DbSet<VwEclipseManagerPending> VwEclipseManagerPendings { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -816,58 +815,6 @@ namespace UAR_WITH_REACT.Models
                 entity.HasNoKey();
 
                 entity.ToView("VwVpApprovalRequired");
-            });
-
-            modelBuilder.Entity<VwEclipseManagerPending>(entity =>
-            {
-                entity.HasNoKey();
-
-                entity.ToView("VwEclipseManagerPending");
-
-                entity.Property(e => e.UARID)
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.ECLIPSESYSTEM)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.ACCESS)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.EMPLOYEEID)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.EMPLOYEENAME)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.TITLE)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.MANAGER)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.MANAGERSTITLE)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.SYSTEMID)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
-
             });
 
             OnModelCreatingPartial(modelBuilder);

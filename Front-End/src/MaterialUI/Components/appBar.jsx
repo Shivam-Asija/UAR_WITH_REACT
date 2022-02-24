@@ -175,12 +175,13 @@ export default function HeaderNavigation({ username }) {
               <Grid item s={2}>
                 <Paper elevation={0} className={classes.paper}>
                   <Button className="text-white">WEBSITE MANAGEMENT</Button>
-                  {/* <Typography variant="h7">WEBSITE MANAGEMENT</Typography> */}
                 </Paper>
               </Grid>
               <Grid item xs={2}>
                 <Paper elevation={0} className={classes.paper}>
-                  <Typography variant="h7">Welcome, {username}</Typography>
+                  <Typography className="remove-cursor-pointer" variant="h6">
+                    Welcome, {username}
+                  </Typography>
                 </Paper>
               </Grid>
             </Grid>

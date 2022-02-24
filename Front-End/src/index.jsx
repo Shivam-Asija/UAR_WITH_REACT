@@ -13,7 +13,7 @@ ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={createTheme(theme)}>
       <PageComponent>
-        <App pageTitle={"Spectrum Reach - MUI Theme"} />
+        <App pageTitle={"User Access Review"} />
       </PageComponent>
     </ThemeProvider>
   </React.StrictMode>,

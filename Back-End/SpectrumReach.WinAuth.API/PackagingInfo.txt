@@ -1,0 +1,1 @@
+﻿nuget.exe push -Source "SpectrumReach" -ApiKey AzureDevOps C:\git\SpectrumReachAuthentication_API\SpectrumReach.WinAuth.API\bin\Debug\SpectrumReach.Authentication.Windows.1.0.4.nupkg

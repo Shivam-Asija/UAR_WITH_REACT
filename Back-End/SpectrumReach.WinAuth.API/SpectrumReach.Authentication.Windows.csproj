@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>SpectrumReach.Authentication.Windows</AssemblyName>
+    <IsPackable>true</IsPackable>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>SpectrumReach Development Team</Authors>
+    <Company>SpectrumReach Development Team</Company>
+    <Description>Windows API Package to include API Project to get Windows Authenticated user info. Refer to repository documentation for more information.</Description>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Version>1.0.7</Version>
+    <PackageReleaseNotes></PackageReleaseNotes>
+    <RepositoryUrl>https://devops.chartercom.com/Spectrum%20Reach/Spectrum%20Reach/_git/SpectrumReachAuthentication_API</RepositoryUrl>
+    <ApplicationIcon />
+    <OutputType>Library</OutputType>
+    <StartupObject />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.DirectoryServices.AccountManagement" Version="6.0.0" />
+  </ItemGroup>
+
+
+</Project>

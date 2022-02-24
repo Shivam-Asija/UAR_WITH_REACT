@@ -7,8 +7,13 @@ import Container from "react-bootstrap/Container";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { NavLink } from "react-router-dom";
 import HeaderNavigation from "../MaterialUI/Components/appBar";
+import { variables } from "../Routes/Variables";
 
 function Header({ username }) {
+  // fetch(variables.API_URL + "authentication")
+  //   .then((response) => response.json())
+  //   .then((json) => console.log("authentication : ", json));
+
   return (
     <>
       <HeaderNavigation username={username} />

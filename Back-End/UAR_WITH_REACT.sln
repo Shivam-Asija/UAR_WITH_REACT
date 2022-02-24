@@ -3,7 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UAR_WITH_REACT", "UAR_WITH_REACT\UAR_WITH_REACT.csproj", "{F6C4FFB3-530D-460A-B1C2-F2E0C6021AAB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UAR_WITH_REACT", "UAR_WITH_REACT\UAR_WITH_REACT.csproj", "{F6C4FFB3-530D-460A-B1C2-F2E0C6021AAB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{70A4B5D5-B799-428B-B886-748FDE75505D} = {70A4B5D5-B799-428B-B886-748FDE75505D}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpectrumReach.Authentication.Windows", "SpectrumReach.WinAuth.API\SpectrumReach.Authentication.Windows.csproj", "{70A4B5D5-B799-428B-B886-748FDE75505D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +20,10 @@ Global
 		{F6C4FFB3-530D-460A-B1C2-F2E0C6021AAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6C4FFB3-530D-460A-B1C2-F2E0C6021AAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6C4FFB3-530D-460A-B1C2-F2E0C6021AAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70A4B5D5-B799-428B-B886-748FDE75505D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70A4B5D5-B799-428B-B886-748FDE75505D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70A4B5D5-B799-428B-B886-748FDE75505D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70A4B5D5-B799-428B-B886-748FDE75505D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
