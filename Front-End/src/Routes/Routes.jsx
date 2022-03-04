@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Home from "../Modules/Home";
+import Home from "../Modules/Home/Home";
 import TimManagerPending from "../Modules/Tim/Manager/Pending";
 import TimMangerRequests from "../Modules/Tim/Manager/Requests";
 import TimManagerApproved from "../Modules/Tim/Manager/Approved";

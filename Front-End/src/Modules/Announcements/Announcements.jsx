@@ -1,13 +1,41 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Uarlogo from "../../Shared/Images/UARlogo.svg";
 import "./AnnouncementsComponent.css";
+import { makeStyles, withStyles } from "@material-ui/core";
+import { variables } from "../../Routes/Variables";
+
+const useStyles = makeStyles({
+  outerDiv: {
+    borderLeft: "0 solid",
+    borderRight: "0 solid",
+    paddingBottom: "30px",
+    marginTop: "2.2em",
+  },
+});
 
 function Announcements() {
-  const [name, setName] = useState("Shivam");
+  const [announcementData, setAnnouncementData] = useState([]);
+
+  const fetchData = () => {
+    fetch(variables.API_URL + "announcements")
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        setAnnouncementData(data);
+        console.log(announcementData);
+      });
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const classes = useStyles();
   return (
     <div className="container">
       <div className="row">
-        <div className="col-md-12 announcements-outer-div">
+        <div className={`col-md-12 ${classes.outerDiv}`}>
           <h3 className="pl-4 mt-3">
             <br />
           </h3>
@@ -36,40 +64,27 @@ function Announcements() {
                       </h2>
                     </div>
                   </div>
-                  <div className="row">
-                    <div className="col-md">
-                      <hr />
-                      <h4 className="font-large color-navy">Eclipse Test</h4>
-                      <p className="mb-0">If you can see this, thanks</p>
-                      <p className="font-italic font-12px">
-                        Created By Orekoya, Midey - 7/8/2020 12:21:46 PM
-                      </p>
-                    </div>
-                  </div>
-                  <div className="row">
-                    <div className="col-md">
-                      <hr />
-                      <h4 className="color-navy">Eclipse UAR Test</h4>
-                      <p className="mb-0">Trying out another</p>
-                      <p className="font-italic font-12px">
-                        Created By Orekoya, Midey - 10/22/2019 2:37:44 PM
-                      </p>
-                    </div>
-                  </div>
-                  <div className="row  mt-4 mb-4">
-                    <div className="col-md">
-                      <div className="p-1">
-                        <div className="col">
-                          <div className="pagination-container">
-                            <ul className="pagination">
-                              <li className="active">
-                                <a>1</a>
-                              </li>
-                            </ul>
-                          </div>
+                  {announcementData.length > 0 &&
+                    announcementData.map((user) => (
+                      <div className="row">
+                        <div className="col-md">
+                          <hr />
+                          <h4 className="font-large color-navy">
+                            {user.Title}
+                          </h4>
+
+                          <p className="mb-0">{user.Message}</p>
+                          <p className="font-italic font-12px">
+                            Created By {user.CreatedByName} -{" "}
+                            {new Date(user.LastUpdatedDate).toLocaleString()}
+                          </p>
                         </div>
                       </div>
-                    </div>
+                    ))}
+                  <div className="pagination">
+                    <a className="active" href="#">
+                      1
+                    </a>
                   </div>
                 </div>
               </div>

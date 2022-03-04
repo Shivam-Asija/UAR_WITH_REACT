@@ -1,6 +1,6 @@
 import React from "react";
 import { MDBFooter } from "mdb-react-ui-kit";
-import logo from "../Shared/Images/SR_logo.svg";
+import logo from "../../Shared/Images/SR_logo.svg";
 
 function Footer() {
   return (

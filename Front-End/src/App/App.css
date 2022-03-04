@@ -510,6 +510,7 @@ body {
   display: inline-grid;
   cursor: pointer;
 }
+
 .managerItem:hover,
 .accessItem:hover {
   background-color: #6c757d;

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import logo from "../Shared/Images/UARlogo.svg";
+import logo from "../../Shared/Images/UARlogo.svg";
 import { Container } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
-import SimpleCard from "../MaterialUI/Components/card";
+import SimpleCard from "../../MaterialUI/Components/card";
 import { Button } from "@material-ui/core";
 
 export default function Home() {
@@ -195,10 +195,8 @@ export default function Home() {
                             className="text-white mb-0 p-4 pb-0 shadow-lg"
                             style={{ background: "#00629B" }}
                           >
-                            <p>
-                              <b>Eclipse Test</b> <br />
-                              If you can see this, thanks
-                            </p>
+                            <b>Eclipse Test</b> <br />
+                            If you can see this, thanks
                           </p>
                         </div>
                         <div className="card-popup-kpi my-4 card pop-up rounded- border-0 shadow">

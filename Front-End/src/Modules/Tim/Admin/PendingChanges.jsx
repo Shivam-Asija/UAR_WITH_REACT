@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { variables } from "../../../Routes/Variables";
 import TimAdminNav from "../../Nav/Tim/Admin/TimAdminNav";
-import DataTable from "../../../Shared/Datatable";
+import DataTable from "../../../Shared/Datatable/Datatable";
 
 function TimAdminPendingChanges() {
   const [data, setData] = useState([]);

@@ -1,19 +1,14 @@
 import React from "react";
-import logo from "../Shared/Images/SR_logo.svg";
-import "bootstrap/dist/css/bootstrap.min.css";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-import Container from "react-bootstrap/Container";
-import NavDropdown from "react-bootstrap/NavDropdown";
-import { NavLink } from "react-router-dom";
-import HeaderNavigation from "../MaterialUI/Components/appBar";
-import { variables } from "../Routes/Variables";
+// import logo from "../Shared/Images/SR_logo.svg";
+// import "bootstrap/dist/css/bootstrap.min.css";
+// import Navbar from "react-bootstrap/Navbar";
+// import Nav from "react-bootstrap/Nav";
+// import Container from "react-bootstrap/Container";
+// import NavDropdown from "react-bootstrap/NavDropdown";
+// import { NavLink } from "react-router-dom";
+import HeaderNavigation from "../../MaterialUI/Components/appBar";
 
 function Header({ username }) {
-  // fetch(variables.API_URL + "authentication")
-  //   .then((response) => response.json())
-  //   .then((json) => console.log("authentication : ", json));
-
   return (
     <>
       <HeaderNavigation username={username} />

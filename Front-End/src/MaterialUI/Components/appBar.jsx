@@ -191,3 +191,7 @@ export default function HeaderNavigation({ username }) {
     </div>
   );
 }
+
+HeaderNavigation.defaultProps = {
+  username: "admin",
+};

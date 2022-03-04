@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { variables } from "../../../Routes/Variables";
 import EclipseManagerNav from "../../Nav/Eclipse/Manager/EclipseManagerNav";
-import DataTable from "../../../Shared/Datatable";
+import DataTable from "../../../Shared/Datatable/Datatable";
 
 function EclipseMangerApproved() {
   const [data, setData] = useState([]);

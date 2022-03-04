@@ -1,9 +1,9 @@
-.announcements-outer-div {
+/* .announcements-outer-div {
   border-left: 0 solid;
   border-right: 0 solid;
   padding-bottom: 30px;
   margin-top: 2.2em;
-}
+} */
 
 .font-12px {
   font-size: 12px;
@@ -45,6 +45,7 @@
   width: 2em;
   text-align: center;
   border-radius: 4px;
+  text-decoration: none;
 }
 html {
   background-color: #eeeeee;

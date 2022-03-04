@@ -48,8 +48,6 @@ export default function SimpleCard({ css, cardData, type }) {
     cardBackgroundColor = "rgb(123,123,123)";
   }
 
-  console.log("width", window.innerWidth);
-
   return (
     <Container
       maxWidth="xs"
@@ -89,12 +87,10 @@ export default function SimpleCard({ css, cardData, type }) {
               SIGN IN
             </Typography>
           </div>
-          <NavLink to={eclipseBtnRoute}>
-            <Button style={css.TimBtn} color="white">
-              Eclipse
-            </Button>
+          <NavLink to={eclipseBtnRoute} style={{ textDecoration: "none" }}>
+            <Button style={css.TimBtn}>Eclipse</Button>
           </NavLink>
-          <NavLink to={timBtnRoute}>
+          <NavLink to={timBtnRoute} style={{ textDecoration: "none" }}>
             <Button style={css.EclipseBtn} variant="contained">
               TIM
             </Button>
