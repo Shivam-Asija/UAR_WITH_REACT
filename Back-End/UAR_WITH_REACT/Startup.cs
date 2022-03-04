@@ -63,6 +63,7 @@ namespace UAR_WITH_REACT
 
             app.UseRouting();
 
+
             app.UseAuthorization();
 
 
